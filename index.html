@@ -3,41 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipo 24 | TP1</title>
-    <!-- Vinculación del CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <title>Equipo 24 | TP1 - Devopoly</title> <!-- REvisar el título, nomnbre del grupo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> <!-- Falta favicon una vez que definamos nombre y logo -->
 </head>
 <body>
 
     <header>
-        <nav>
-            <div class="logo">Equipo 24</div>
-            <!-- Botones internos de navegación obligatorios -->
+        <nav class="menu-superior"> <!-- falta logo, modo nocturno quizás, etc -->
+            <div class="logo">DEVOPOLY | Equipo 24</div>
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
+                <li><a href="#integrantes">Integrantes</a></li>
                 <li><a href="bitacora.html">Bitácora</a></li>
+                <li><a href="#" id="abrir-contacto-menu">Contacto</a></li> <!-- Ver contacto -->
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Equipo 24</h1>
-            <p>Propósito del equipo.</p>
+    <main class="contenedor-principal">
+        
+        <!-- Tablero --> <!-- Ajustar el tamaño del tablero -->
+        <section class="tablero">
+            
+            <!-- Esquinas -->
+            <a href="index.html" class="casilla esquina esquina-sup-izq">
+                <span class="icono">🏁</span> <!-- La idea es cambiar estos iconos por imagenes -->
+                <strong>SALIDA</strong>
+                <small>INICIO</small>
+            </a>
+
+            <a href="#integrantes" class="casilla esquina esquina-sup-der">
+                <span class="icono">🅿️</span>
+                <strong>PARADA LIBRE</strong>
+                <small>Equipo</small>
+            </a>
+
+            <a href="#" id="abrir-contacto-casilla" class="casilla esquina esquina-inf-der">
+                <span class="icono">👮</span>
+                <strong>VÁYASE A LA CÁRCEL</strong>
+                <small>Contacto</small>
+            </a>
+
+            <a href="bitacora.html" class="casilla esquina esquina-inf-izq">
+                <span class="icono">📖</span>
+                <strong>DE VISITA EN LA CÁRCEL</strong>
+                <small>Bitácora</small>
+            </a>
+
+            <!-- Fila Superior -->
+            <div class="casilla fila-superior col-2">
+                <div class="franja color-naranja franja-abajo"></div> <!-- Hay que agregar las franjas de color en todas las casillas -->
+                <strong>HTML5</strong> <!-- Agregar iconos o mejor imagenes referenciales a las casillas -->
+                <small>Avenida</small> <!-- Revisar el nombre de las casillas -->
+            </div>
+
+            <div class="casilla fila-superior col-3">
+                <div class="franja color-naranja franja-abajo"></div>
+                <strong>CSS3</strong>
+                <small>Avenida</small>
+            </div>
+
+            <div class="casilla fila-superior col-4">
+                <div class="franja color-naranja franja-abajo"></div>
+                <strong>GitHub</strong>
+                <small>Repositorio</small>
+            </div>
+
+            <div class="casilla fila-superior col-5">
+                <div class="franja color-naranja franja-abajo"></div>
+                <strong>Vercel</strong>
+                <small>Deploy</small>
+            </div>
+
+            <!-- Columna lateral izquierda -->
+            <div class="casilla fila2-col1">
+                <div class="franja color-violeta franja-derecha"></div>
+                <strong>JavaScript</strong>
+                <small>Calle JS</small>
+            </div>
+            <div class="casilla fila3-col1">
+                <div class="franja color-violeta franja-derecha"></div>
+                <strong>Bug</strong>
+                <small>Pierdes turno</small>
+            </div>
+            <div class="casilla fila4-col1">
+                <div class="franja color-violeta franja-derecha"></div>
+                <strong>Equipo</strong>
+                <small>Avanzá 2</small>
+            </div>
+            <div class="casilla fila5-col1">
+                <div class="franja color-violeta franja-derecha"></div>
+                <strong>Suerte</strong>
+                <small>Sacá carta</small>
+            </div>
+
+            <!-- Columna lateral derecha -->
+            <div class="casilla fila2-col6">
+                <div class="franja color-verde franja-izquierda"></div>
+                <strong>Proyectos</strong>
+                <small>Construyendo</small>
+            </div>
+            <div class="casilla fila3-col6">
+                <div class="franja color-verde franja-izquierda"></div>
+                <strong>Comunidad</strong>
+                <small>Compartir</small>
+            </div>
+            <div class="casilla fila4-col6">
+                <div class="franja color-verde franja-izquierda"></div>
+                <strong>Nube</strong>
+                <small>AWS</small>
+            </div>
+            <div class="casilla fila5-col6">
+                <div class="franja color-verde franja-izquierda"></div>
+                <strong>Retos</strong>
+                <small>Desafíos</small>
+            </div>
+
+            <!-- Fila inferior -->
+            <div class="casilla fila6-col2">
+                <div class="franja color-azul franja-arriba"></div>
+                <strong>Decisiones</strong>
+                <small>Planificamos</small>
+            </div>
+            <div class="casilla fila6-col3">
+                <div class="franja color-azul franja-arriba"></div>
+                <strong>Retros</strong>
+                <small>Mejoramos</small>
+            </div>
+            <div class="casilla fila6-col4">
+                <div class="franja color-azul franja-arriba"></div>
+                <strong>Mejoras</strong>
+                <small>Evolución</small>
+            </div>
+            <div class="casilla fila6-col5">
+                <div class="franja color-azul franja-arriba"></div>
+                <strong>Lecciones</strong>
+                <small>Aprendemos</small>
+            </div>
+                                    
+            <!-- Espacio central del tablero-->
+            <div class="centro-tablero">
+                
+                <!-- Título y propósito --> <!-- El tema del propósito quizás lo pasaría a debajo de como queres jugar -->
+                <section class="hero text-center">
+                    <h1>DEVOPOLY</h1>
+                    <p>Equipo 24: Construir código.</p> <!-- Ver el tema del propósito del equipo -->
+                </section>
+
+                <!-- Cartas de suerte y arca comunal -->
+                <div class="cartas-centrales">
+                    <div class="carta carta-suerte">🍀 SUERTE</div> <!-- Ver la funcionaidad de estás cartas y reemplazar algunos casillero para suerte y arca comunal -->
+                    <div class="carta carta-arca">💼 ARCA COMUNAL</div>
+                </div>
+
+                <!-- Botón de Dados --> <!-- Imágen de dados en la parte superior del botón? -->
+                <button id="btn-dados" class="boton-jugar">TIRAR DADOS</button> <!-- Ver que funcione el tirar dado y como sería eso en el tablero -->
+
+                <!-- Las 4 fichas de los jugadores -->
+                <div id="integrantes"class="fichas-jugadores"> <!-- Este sería el acceso a los perfiles de los integrandes del grupo -->
+                    <a href="brian.html" class="ficha-avatar ficha-brian"><br>Brian</a> <!-- Agregar el avatar de las fichas -->
+                    <a href="ludmila.html" class="ficha-avatar ficha-ludmila"><br>Ludmila</a>
+                    <a href="pedro.html" class="ficha-avatar ficha-pedro"><br>Pedro</a>
+                    <a href="flavia.html" class="ficha-avatar ficha-flavia"><br>Flavia</a>
+                </div>
+
+            </div>
+            
         </section>
 
-        <!-- Listado de integrantes -->
-        <section class="integrantes">
-            <h2>Nuestro equipo</h2>
-            <ul class="lista-integrantes">
-                <li><a href="flavia.html">Flavia Berzuini</a></li>
-                <li><a href="ludmila.html">Ludmila Quiroz</a></li>
-                <li><a href="pedro.html">Pedro Bustamante</a></li>
-                <li><a href="brian.html">Brian Sabio</a></li>
-                <!-- Tus compañeros agregarán sus enlaces acá -->
-            </ul>
-        </section>
+        <!-- Panel lateral --> <!-- Esto falta desarrollar -->
+        <aside class="panel-lateral">
+            <div class="bloque-instrucciones">
+                <h3>¿Cómo querés jugar?</h3>
+                <p>Tirá los dados para explorar el tablero o usá el menú superior para ir directo a cada sección.</p> 
+            </div>
+        </aside>
+
     </main>
+
+    <!-- Esto sería una opción que se me ocurrió para el contacto pero lo podemos hacer tipo formulario también-->
+    <!-- Contacto oculto, aparce al hacer clic -->
+    <div id="modal-contacto" class="modal-overlay">
+        <div class="tarjeta-policial">
+            <button id="cerrar-modal" class="btn-cerrar">✖</button>
+            <h2>DECLARACIÓN POLICIAL</h2>
+            <p class="subtitulo">Expediente N° 24 - Devopoly</p>
+            <hr>
+            <p>Tiene derecho a dejar un mensaje. Todo lo que escriba será revisado por Devopoly.</p>
+            
+            <form action="#" method="POST" class="formulario-policial">
+                <label for="nombre">Sospechoso/a (Nombre):</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ej: John Doe">
+                
+                <label for="mensaje">Declaración:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escriba su mensaje aquí..."></textarea>
+                
+                <button type="submit" class="btn-enviar">Firmar Declaración</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Falta footer -->
+    <footer class="pie-pagina">
+        <p>&copy; 2026 Devopoly. Todos los derechos reservados.</p>
+    </footer>
 
     <!-- Vinculación del JavaScript -->
     <script src="js/script.js"></script>
