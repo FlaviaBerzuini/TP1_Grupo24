@@ -651,3 +651,300 @@ body {
     font-style: italic;
     margin-top: 15px;
 }
+
+/* ============================================
+   12. BITÁCORA DE DESARROLLO
+   ============================================ */
+
+/* Contenedor principal de bitácora */
+.contenedor-bitacora {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Hero / Sección introductoria */
+.hero-bitacora {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+    border-radius: 12px;
+    border-left: 5px solid #f39c12;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero-bitacora h1 {
+    font-size: 2.5rem;
+    color: #f39c12;
+    margin-bottom: 15px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.subtitulo-bitacora {
+    font-size: 1.1rem;
+    color: #bdc3c7;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Contenedor de entradas */
+.entradas-bitacora {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.seccion-bitacora {
+    background-color: transparent;
+}
+
+/* Título de sección */
+.titulo-seccion {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #f39c12;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icono-seccion {
+    font-size: 2rem;
+}
+
+/* Entrada individual */
+.entrada-bitacora {
+    background-color: #2c3e50;
+    border: 2px solid #34495e;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.entrada-bitacora:hover {
+    border-color: #f39c12;
+    box-shadow: 0 4px 16px rgba(243, 156, 18, 0.2);
+}
+
+/* Encabezado de entrada */
+.entrada-encabezado {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    background-color: #2c3e50;
+    transition: background-color 0.3s ease;
+}
+
+.entrada-bitacora:hover .entrada-encabezado {
+    background-color: #34495e;
+}
+
+/* Meta información de entrada */
+.entrada-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    min-width: 250px;
+}
+
+.fecha-entrada {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.tipo-entrada {
+    background-color: #9b59b6;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Título de entrada */
+.entrada-titulo {
+    font-size: 1.2rem;
+    color: white;
+    flex-grow: 1;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Botón expandir/contraer */
+.btn-expandir {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #f39c12;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.btn-expandir:hover {
+    transform: scale(1.2);
+}
+
+.entrada-bitacora.expandida .btn-expandir {
+    transform: rotate(180deg);
+}
+
+/* Contenido de entrada (oculto por defecto) */
+.entrada-contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background-color: #1a252f;
+}
+
+.entrada-bitacora.expandida .entrada-contenido {
+    max-height: 1500px;
+    padding: 0 20px 20px 20px;
+    border-top: 1px solid #34495e;
+}
+
+/* Bloques dentro del contenido */
+.entrada-bloque {
+    margin-bottom: 20px;
+}
+
+.entrada-bloque h4 {
+    font-size: 1.1rem;
+    color: #f39c12;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.entrada-bloque p {
+    color: #ecf0f1;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.entrada-bloque ul {
+    color: #ecf0f1;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.entrada-bloque ul li {
+    margin-bottom: 8px;
+}
+
+/* Código inline en bitácora */
+.entrada-bloque code {
+    background-color: #2c3e50;
+    color: #1abc9c;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   RESPONSIVE - BITÁCORA
+   ============================================ */
+
+@media (max-width: 900px) {
+    .hero-bitacora h1 {
+        font-size: 2rem;
+    }
+
+    .titulo-seccion {
+        font-size: 1.5rem;
+    }
+
+    .entrada-encabezado {
+        flex-wrap: wrap;
+    }
+
+    .entrada-meta {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .entrada-titulo {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .contenedor-bitacora {
+        padding: 20px 15px;
+    }
+
+    .hero-bitacora {
+        padding: 25px 15px;
+        margin-bottom: 40px;
+    }
+
+    .hero-bitacora h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitulo-bitacora {
+        font-size: 0.95rem;
+    }
+
+    .titulo-seccion {
+        font-size: 1.2rem;
+        gap: 10px;
+    }
+
+    .icono-seccion {
+        font-size: 1.5rem;
+    }
+
+    .entrada-encabezado {
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .entrada-meta {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.85rem;
+    }
+
+    .entrada-titulo {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .btn-expandir {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+
+    .entrada-bloque h4 {
+        font-size: 1rem;
+    }
+
+    .entrada-bloque p,
+    .entrada-bloque ul {
+        font-size: 0.9rem;
+    }
+}

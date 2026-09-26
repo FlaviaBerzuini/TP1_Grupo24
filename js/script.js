@@ -4,9 +4,9 @@ const btnAbrirMenu = document.getElementById('abrir-contacto-menu');
 const btnAbrirCasilla = document.getElementById('abrir-contacto-casilla');
 const btnCerrar = document.getElementById('cerrar-modal');
 
-if (modal) { 
+if (modal) {
     function abrirModal(evento) {
-        evento.preventDefault(); 
+        evento.preventDefault();
         modal.classList.add('activo');
     }
 
@@ -14,9 +14,17 @@ if (modal) {
         modal.classList.remove('activo');
     }
 
-    if (btnAbrirMenu) btnAbrirMenu.addEventListener('click', abrirModal);
-    if (btnAbrirCasilla) btnAbrirCasilla.addEventListener('click', abrirModal);
-    if (btnCerrar) btnCerrar.addEventListener('click', cerrarModal);
+    if (btnAbrirMenu) {
+        btnAbrirMenu.addEventListener('click', abrirModal);
+    }
+
+    if (btnAbrirCasilla) {
+        btnAbrirCasilla.addEventListener('click', abrirModal);
+    }
+
+    if (btnCerrar) {
+        btnCerrar.addEventListener('click', cerrarModal);
+    }
 
     window.addEventListener('click', function(evento) {
         if (evento.target === modal) {
@@ -25,83 +33,95 @@ if (modal) {
     });
 }
 
-// 2. Intereactividad tarjetas (voltear tarjeta y revelar Foto)
+
+// 2. Interactividad de la tarjeta
+// Voltear tarjeta y revelar/ocultar jugador
+
 const tarjetaPerfil = document.getElementById('tarjeta-perfil');
 const btnRevelar = document.getElementById('btn-revelar');
 const imagenPerfil = document.getElementById('imagen-perfil');
 
-// Diccionario de mapeo: Relación 1 a 1 entre el archivo del ícono y el del avatar
+
+// Mapeo: ícono -> avatar
 const MAPA_JUGADORES = {
     'perro.png': 'avatar-brian.png',
     'sombrero.png': 'avatar-flavia.png',
-    'auto.png': 'avatar-pedro.png' // <-- Agregamos el avatar que subió Pedro
+    'auto.png': 'avatar-pedro.png',
+    'dedal.png': 'avatar-ludmila.png'
 };
 
-// Diccionario inverso: Se genera solo para saber a qué ícono volver
+
+// Mapeo inverso: avatar -> ícono
 const MAPA_INVERSO = Object.fromEntries(
-    Object.entries(MAPA_JUGADORES).map(([icono, avatar]) => [avatar, icono])
+    Object.entries(MAPA_JUGADORES).map(
+        ([icono, avatar]) => [avatar, icono]
+    )
 );
 
-if (tarjetaPerfil) { 
-    
-    // Función 1: Girar la tarjeta (excepto si tocan el botón)
+
+if (tarjetaPerfil) {
+
+    // Función 1: Girar la tarjeta
+    // No se gira cuando el clic ocurre dentro del botón de revelar
     tarjetaPerfil.addEventListener('click', function(evento) {
-        // Si el clic NO fue en el botón de revelar, giramos la tarjeta
-        if (evento.target !== btnRevelar) {
+        if (!btnRevelar || !btnRevelar.contains(evento.target)) {
             const tarjetaInner = this.querySelector('.tarjeta-inner');
-            tarjetaInner.classList.toggle('girada');
+
+            if (tarjetaInner) {
+                tarjetaInner.classList.toggle('girada');
+            }
         }
     });
 
-<<<<<<<<< Temporary merge branch 1
-    // Función 2: Revelar jugador
-    // Diccionario de correspondencia directa: asocia el nombre de archivo de cada ícono con su avatar correspondiente
-    const mapaJugadores = {
-        'sombrero.png': 'avatar-flavia.png',
-        'auto.png': 'avatar-pedro.png',
-        'perro.png': 'avatar-brian.png',
-        'dedal.png': 'avatar-ludmila.png'
-    };
 
-    // Mapeo inverso generado automáticamente (avatar -> ícono) para poder revertir el cambio sin repetir datos
-    const mapaInverso = Object.fromEntries(
-        Object.entries(mapaJugadores).map(([icono, avatar]) => [avatar, icono]));
-
-    // Se verifica la existencia de los elementos antes de adjuntar el listener
+    // Función 2: Revelar / ocultar jugador
     if (btnRevelar && imagenPerfil) {
         btnRevelar.addEventListener('click', function() {
-            // Extrae únicamente el nombre del archivo actual ignorando la ruta completa (ej: "sombrero.png")
-            const archivoActual = imagenPerfil.src.split('/').pop();
-            
-            // Si la imagen actual es un ícono, se sustituye por su avatar y se actualiza el texto del botón
-            if (mapaJugadores[archivoActual]) {
-                const avatar = mapaJugadores[archivoActual];
-                imagenPerfil.src = `img/${avatar}`;
-                btnRevelar.textContent = 'Ocultar Jugador';
 
-            // Si la imagen actual es un avatar, se restaura el ícono original correspondiente y se cambia el texto
-            } else if (mapaInverso[archivoActual]) {
-                const icono = mapaInverso[archivoActual];
-=========
-    // Función 2: Revelar jugador usando objeto de mapeo
-    if (btnRevelar && imagenPerfil) {
-        btnRevelar.addEventListener('click', function() {
-            // Extraemos solo el nombre del archivo de la ruta actual
+            // Obtener solamente el nombre del archivo actual
             const archivoActual = imagenPerfil.src.split('/').pop();
 
+
+            // Si actualmente se muestra un ícono,
+            // cambiarlo por el avatar correspondiente
             if (MAPA_JUGADORES[archivoActual]) {
-                // Si es un ícono conocido, revelamos su avatar
+
                 const avatar = MAPA_JUGADORES[archivoActual];
+
                 imagenPerfil.src = `img/${avatar}`;
                 btnRevelar.textContent = 'Ocultar Jugador';
-                
+
+
+            // Si actualmente se muestra un avatar,
+            // volver al ícono correspondiente
             } else if (MAPA_INVERSO[archivoActual]) {
-                // Si es un avatar conocido, lo volvemos a ocultar con su ícono
+
                 const icono = MAPA_INVERSO[archivoActual];
->>>>>>>>> Temporary merge branch 2
+
                 imagenPerfil.src = `img/${icono}`;
                 btnRevelar.textContent = 'Revelar Jugador';
             }
         });
     }
 }
+
+// 3. Bitácora - Expandir/contraer entradas
+const entradasEncabezados = document.querySelectorAll('.entrada-encabezado');
+
+entradasEncabezados.forEach(encabezado => {
+    encabezado.addEventListener('click', function() {
+        const entrada = this.closest('.entrada-bitacora');
+        entrada.classList.toggle('expandida');
+    });
+});
+
+// Permitir que el botón de expandir también funcione
+const botonesExpandir = document.querySelectorAll('.btn-expandir');
+
+botonesExpandir.forEach(boton => {
+    boton.addEventListener('click', function(evento) {
+        evento.stopPropagation();
+        const entrada = this.closest('.entrada-bitacora');
+        entrada.classList.toggle('expandida');
+    });
+});
