@@ -178,7 +178,7 @@ body {
     grid-template-rows: repeat(6, 1fr);
     aspect-ratio: 1 / 1; 
     width: 100%;
-    max-width: clamp(600px, 82vh, 1000px); 
+    max-width: clamp(550px, 78vh, 950px);
     box-shadow: 30px 35px 60px rgba(0,0,0,0.7), -2px -2px 15px rgba(255,255,255,0.08);
     margin-top: 0;
     margin-bottom: auto; 
@@ -196,16 +196,26 @@ body {
     text-align: center;
     text-decoration: none;
     color: #111;
-    font-size: 1rem;
+    font-size: clamp(0.55rem, 0.75vw, 0.85rem);
     position: relative;
     overflow: hidden;
-    padding: 5px;
+    padding: 2px;
 }
 
-.casilla:hover {
+.casilla strong {
+    line-height: 1.1;
+    display: block;
+} 
+
+/*  .casilla:hover {
     background-color: #c4d9ce;
     cursor: pointer;
 }
+*/
+.casilla:has(.franja-arriba) { padding-top: 28%; }
+.casilla:has(.franja-abajo) { padding-bottom: 28%; }
+.casilla:has(.franja-izquierda) { padding-left: 28%; }
+.casilla:has(.franja-derecha) { padding-right: 28%; }
 
 .casilla .icono {
     font-size: 1.2rem;
@@ -223,13 +233,14 @@ body {
     z-index: 1;
 }
 
-.fila-superior { padding-bottom: 25%; }
+/* .fila-superior { padding-bottom: 25%; }
 .fila6-col2, .fila6-col3, .fila6-col4, .fila6-col5 { padding-top: 25%; }
 .fila2-col1, .fila3-col1, .fila4-col1, .fila5-col1 { padding-right: 25%; }
 .fila2-col6, .fila3-col6, .fila4-col6, .fila5-col6 { padding-left: 25%; }
 .col-4, .fila3-col1, .fila4-col6, .fila6-col3 {
     padding: 5px !important; 
 }
+*/
 
 /* Franjas de color */
 .franja {
@@ -291,20 +302,20 @@ body {
 
 /* Estilo para las imágenes de las esquinas */
 .icono-esquina {
-    width: 45px;
-    height: 45px;
+    max-width: 55%;
+    max-height: 40%;
     object-fit: contain;
     object-position: bottom;
     margin-bottom: 2px; 
 }
 
 .casilla-esquina strong {
-    font-size: 0.9rem;
+    font-size: clamp(0.6rem, 0.75vw, 0.8rem);
     margin-bottom: 2px;
 }
 
 .casilla-esquina small {
-    font-size: 0.7rem;
+    font-size: clamp(0.5rem, 0.6vw, 0.65rem);
     color: #555;
     text-transform: uppercase;
     font-weight: bold;
@@ -346,9 +357,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 6px;
     color: #333;
-    padding: 15px;
+    padding: 8px;
     text-align: center;
     overflow: hidden;
 }
@@ -356,7 +367,7 @@ body {
 /* Logo */
 .logo-central {
     width: 100%;
-    max-width: 280px;
+    max-width: 240px;
     object-fit: contain;
     margin-bottom: 5px;
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
@@ -364,7 +375,7 @@ body {
 
 /* Botón tirar dados */
 .dados-imagen {
-    width: 90px;
+    width: 70px;
     margin-bottom: 5px;
     filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
     transition: transform 0.3s ease;
@@ -422,7 +433,7 @@ body {
 }
 
 .ficha-peon img {
-    height: 45px;
+    height: 38px;
     object-fit: contain;
     filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.4));
     transition: all 0.3s ease;
@@ -1026,4 +1037,157 @@ body {
 .icono-footer {
     width: 16px;
     height: 16px;
+}
+
+/* Parte del responsive */
+
+
+/* <= 1200px */
+@media screen and (max-width: 1200px) {
+    .contenedor-principal {
+        gap: 30px;
+        padding: 30px 15px;
+    }
+
+    .tablero {
+        max-width: clamp(450px, 70vh, 800px);
+    }
+}
+
+/* <= 900px */
+@media screen and (max-width: 900px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .contenedor-principal {
+        flex-direction: column-reverse; /* El tablero quedaría arriba y las instrucciones abajo */
+        align-items: center;
+        gap: 30px;
+        padding: 20px 15px;
+    }
+
+    .panel-lateral {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .tablero {
+        width: 100%;
+        max-width: 550px;
+    }
+
+    
+    .logo-central {
+        max-width: 200px;
+    }
+
+    .dados-imagen {
+        width: 65px;
+    }
+
+    .ficha-peon img {
+        height: 35px;
+    }
+
+    .tarjeta-policial {
+        width: 95%;
+        padding: 25px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .tarjeta-propiedad {
+        height: clamp(600px, 85vh, 750px);
+    }
+}
+
+/* <= 600px */
+@media screen and (max-width: 600px) {
+    .menu-superior {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .casilla {
+        font-size: clamp(0.5rem, 1.8vw, 0.75rem);
+        padding: 2px;
+    }
+
+    .casilla .icono {
+        font-size: 0.9rem;
+    }
+
+    .icono-esquina {
+        width: 50%;
+        height: 35%;
+    }
+
+    .logo-central {
+        max-width: 130px;
+    }
+
+    .dados-imagen {
+        width: 45px;
+    }
+
+    .boton-jugar {
+        padding: 6px 14px;
+        font-size: 0.7rem;
+    }
+
+    .titulo-equipo {
+        font-size: 0.6rem;
+    }
+
+    .ficha-peon img {
+        height: 25px;
+    }
+
+    .fichas-jugadores {
+        gap: 8px;
+    }
+
+    .imagen-avatar {
+        width: 110px;
+        height: 110px;
+    }
+
+    .cabecera-propiedad h2 {
+        font-size: 1.5rem;
+    }
+
+    .lista-precios p, .costos-construccion p {
+        font-size: 0.9rem;
+    }
+}
+
+/* <= 400px */
+@media screen and (max-width: 400px) {
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+
+    .casilla-esquina strong {
+        font-size: 0.65rem;
+    }
+
+    .casilla-esquina small {
+        display: none; 
+    }
+
+    .tarjeta-propiedad {
+        height: 560px;
+    }
+
+    .borde-interno-frente {
+        padding: 10px;
+    }
 }

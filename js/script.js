@@ -79,45 +79,89 @@ if (tarjetaPerfil) {
 document.addEventListener('DOMContentLoaded', () => {
     const btnDados = document.getElementById('btn-dados');
     const imgDados = document.querySelector('.dados-imagen');
-    const casillas = document.querySelectorAll('.casilla');
+    const mensajeDados = document.getElementById('mensaje-dados');
 
-    if(btnDados) {
+    // Esto es para que no se vaya para cualquier lado las casillas. Sino se puede modifcar en el html para que quede en orden 
+    const ordenRecorrido = [
+        '.esquina-sup-izq',  // 0: SALIDA
+        '.col-2',            // 1: HTML5
+        '.col-3',            // 2: CSS3
+        '.col-4',            // 3: GIT
+        '.col-5',            // 4: GITHUB
+        '.esquina-sup-der',  // 5: DE VISITA NADA MÁS (Bitácora)
+        '.fila2-col6',       // 6: NODE.JS
+        '.fila3-col6',       // 7: EXPRESS
+        '.fila4-col6',       // 8: ENERGÍA
+        '.fila5-col6',       // 9: AWS
+        '.esquina-inf-der',  // 10: PARADA LIBRE (Equipo)
+        '.fila6-col5',       // 11: JAVASCRIPT
+        '.fila6-col4',       // 12: REACT
+        '.fila6-col3',       // 13: AGUA
+        '.fila6-col2',       // 14: SQL
+        '.esquina-inf-izq',  // 15: VÁYASE A LA CÁRCEL (Contacto)
+        '.fila5-col1',       // 16: KOTLIN
+        '.fila4-col1',       // 17: FIGMA
+        '.fila3-col1',       // 18: IMPUESTO
+        '.fila2-col1'        // 19: ANDROID
+    ];
+
+    // Posición inicial (Índice 0 = SALIDA)
+    let casillaActualIndex = 0;
+
+    if (btnDados) {
         btnDados.addEventListener('click', () => {
-            
-            // 1. Animamos los dados
-            imgDados.classList.add('animar-dados');
-            
-            // 2. Limpiamos selecciones anteriores
-            casillas.forEach(casilla => casilla.classList.remove('casilla-seleccionada'));
+            btnDados.disabled = true;
 
-            // 3. Esperamos que termine de agitarse (500ms)
+            
+            const dado1 = Math.floor(Math.random() * 6) + 1;
+            const dado2 = Math.floor(Math.random() * 6) + 1;
+            const sumaDados = dado1 + dado2;
+
+        
+            imgDados.classList.add('animar-dados');
+            if (mensajeDados) {
+                mensajeDados.textContent = `🎲 Lanzando dados...`;
+            }
+
+            
+            document.querySelectorAll('.casilla').forEach(c => c.classList.remove('casilla-seleccionada'));
+
             setTimeout(() => {
                 imgDados.classList.remove('animar-dados');
 
-                // Elegimos la casilla al azar
-                const indiceAleatorio = Math.floor(Math.random() * casillas.length);
-                const casillaElegida = casillas[indiceAleatorio];
+               
+                casillaActualIndex = (casillaActualIndex + sumaDados) % ordenRecorrido.length;
+                
+                
+                const selectorCasilla = ordenRecorrido[casillaActualIndex];
+                const casillaElegida = document.querySelector(selectorCasilla);
 
-                // Iluminamos la casilla
-                casillaElegida.classList.add('casilla-seleccionada');
+                if (casillaElegida) {
+                    casillaElegida.classList.add('casilla-seleccionada');
+
                 
-                // Esperamos 1.2 segundos
-                setTimeout(() => {
-                    if (casillaElegida.tagName.toLowerCase() === 'a') {
-                        // Verificamos si la casilla ganadora es la de contacto/cárcel
-                        if (casillaElegida.id === 'abrir-contacto-casilla') {
-                            const modal = document.getElementById('modal-contacto');
-                            if (modal) modal.classList.add('activo');
-                        } else {
-                            // Para cualquier otra casilla con enlace (Bitácora, Equipo), navega normal
-                            casillaElegida.click(); 
-                        }
-                    } else {
-                        console.log("Caíste en una tecnología: " + casillaElegida.innerText);
+                    const nombreCasilla = casillaElegida.querySelector('strong')?.innerText.replace(/\n/g, ' ') || 'Casilla';
+
+                    if (mensajeDados) {
+                        mensajeDados.innerHTML = `Sacaste <strong>${dado1}</strong> + <strong>${dado2}</strong> = <strong>${sumaDados}</strong>.<br>Avanzaste ${sumaDados} posiciones hasta <strong>${nombreCasilla}</strong>.`;
                     }
-                }, 1200);
-                
-            }, 500); 
+
+                    
+                    setTimeout(() => {
+                        btnDados.disabled = false;
+
+                        if (casillaElegida.tagName.toLowerCase() === 'a') {
+                            if (casillaElegida.id === 'abrir-contacto-casilla') {
+                                const modal = document.getElementById('modal-contacto');
+                                if (modal) modal.classList.add('activo');
+                            } else {
+                                casillaElegida.click();
+                            }
+                        }
+                    }, 2000);
+                }
+
+            }, 500);
         });
     }
 });
