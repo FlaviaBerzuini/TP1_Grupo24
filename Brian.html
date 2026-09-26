@@ -1,1 +1,116 @@
-<!--Tarjeta de perfil individual-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo 24 | TP1 - Devopoly</title> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+
+    <header>
+        <nav class="menu-superior"> 
+            <div class="logo">DEVOPOLY | Equipo 24</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#integrantes">Integrantes</a></li>
+                <li><a href="bitacora.html">Bitácora</a></li>
+                <li><a href="#" id="abrir-contacto-menu">Contacto</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-perfil">
+        <p class="instruccion-giro">👆 Hacé click en la tarjeta para girarla</p>
+        
+        <!-- Contenedor principal de la tarjeta -->
+        <div class="tarjeta-propiedad" id="tarjeta-perfil">
+            <div class="tarjeta-inner">
+                
+                <!-- Frente de la tarjeta -->
+                <div class="tarjeta-cara tarjeta-frente">
+                    <div class="borde-interno-frente">
+                        <div class="cabecera-propiedad color-verde">
+                            <small>TÍTULO DE PROPIEDAD</small>
+                            <h2>BRIAN SABIO</h2>
+                        </div>
+                        
+                        <div class="cuerpo-propiedad">
+                            
+                            <div class="perfil-datos">
+                                <img src="img/perro.png" alt="Avatar del Jugador" id="imagen-perfil" class="imagen-avatar">
+                                <p class="ubicacion">La Plata - Buenos Aires, Argentina • 32 años</p>
+                            </div>
+
+                            <!-- Habilidades -->
+                            <div class="lista-precios">
+                                <p><span>Renta</span> <span><span class="simbolo-m">₩</span> HTML / CSS / JavaScrip</span></p>
+                                <p><span>Renta con grupo de color</span> <span><span class="simbolo-m">₩</span> Node.js / Express</span></p>
+                                <p><span>Renta con 1 <svg class="icono-casa" viewBox="0 0 24 24"><path fill="#2ecc71" stroke="#111" stroke-width="2" d="M12 2L2 12h3v10h14V12h3L12 2z"/></svg> Casa</span> <span><span class="simbolo-m">₩</span> Kotlin / Android</span></p>
+                                <p><span>Renta con 2 <svg class="icono-casa" viewBox="0 0 24 24"><path fill="#2ecc71" stroke="#111" stroke-width="2" d="M12 2L2 12h3v10h14V12h3L12 2z"/></svg> Casas</span> <span><span class="simbolo-m">₩</span> .NET / C#</span></p>
+                                <p><span>Renta con 3 <svg class="icono-casa" viewBox="0 0 24 24"><path fill="#2ecc71" stroke="#111" stroke-width="2" d="M12 2L2 12h3v10h14V12h3L12 2z"/></svg> Casas</span> <span><span class="simbolo-m">₩</span> Spring / Java</span></p>
+                                <p><span>Renta con 4 <svg class="icono-casa" viewBox="0 0 24 24"><path fill="#2ecc71" stroke="#111" stroke-width="2" d="M12 2L2 12h3v10h14V12h3L12 2z"/></svg> Casas</span> <span><span class="simbolo-m">₩</span> AWS Cloud</span></p>
+                                <p><span>Renta con 1 <svg class="icono-casa" viewBox="0 0 24 24"><path fill="#e74c3c" stroke="#111" stroke-width="2" d="M12 2L2 12h3v10h14V12h3L12 2z"/></svg> Hotel</span> <span><span class="simbolo-m">₩</span> LLMs</span></p>
+                            </div>
+
+                            <hr class="linea-frente">
+                            
+                            <!-- Se agregó type="button" -->
+                            <button type="button" id="btn-revelar" class="boton-accion">Revelar Jugador</button>
+                        </div>
+                    </div>
+                </div>
+
+               <!-- Reverso de la tarjeta -->
+                <div class="tarjeta-cara tarjeta-reverso">
+                    <div class="borde-interno-reverso borde-color-reverso-rojo">
+                        
+                        <div class="reverso-texto">
+                            <h3>PELÍCULAS</h3>
+                            <ul class="reverso-lista">
+                                <li><svg class="icono-negro" viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg> The dawn of the dead</li>
+                                <li><svg class="icono-negro" viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg> Arrival</li>
+                                <li><svg class="icono-negro" viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg> Her</li>
+                            </ul>
+                            
+                            <hr class="linea-reverso">
+                            
+                            <h3>DISCOS</h3>
+                            <ul class="reverso-lista">
+                                <li><svg class="icono-negro" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg> Random Access Memories - Daft Punk</li>
+                                <li><svg class="icono-negro" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg> The Dark Side of the Moon - Pink Floyd</li>
+                                <li><svg class="icono-negro" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg> Clics modernos - Charly García</li>
+                            </ul>
+                        </div>
+
+                        <!-- Frase al pie -->
+                        <small class="texto-inferior">Si esta tarjeta está bocarriba, el jugador está listo para programar.</small>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- HTML DEL MODAL DE CONTACTO AGREGADO -->
+    <div id="modal-contacto" class="modal" style="display: none;">
+        <div class="modal-contenido">
+            <span id="cerrar-modal" class="cerrar-btn">&times;</span>
+            <h2>Contacto</h2>
+            <p>Acá va el contenido de tu formulario o medios de contacto.</p>
+        </div>
+    </div>
+
+    <!-- Falta footer -->
+    <footer class="pie-pagina">
+        <p>&copy; 2026 Devopoly. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Vinculación del JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

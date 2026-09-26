@@ -30,6 +30,19 @@ const tarjetaPerfil = document.getElementById('tarjeta-perfil');
 const btnRevelar = document.getElementById('btn-revelar');
 const imagenPerfil = document.getElementById('imagen-perfil');
 
+// Diccionario de mapeo: Relación 1 a 1 entre el archivo del ícono y el del avatar
+const MAPA_JUGADORES = {
+    'perro.png': 'avatar-brian.png',
+    'sombrero.png': 'avatar-flavia.png',
+    // Si agregas más jugadores en el futuro, súmalos acá. Ej:
+    // 'bigote.png': 'avatar_carlos.png'
+};
+
+// Diccionario inverso: Se genera solo para saber a qué ícono volver
+const MAPA_INVERSO = Object.fromEntries(
+    Object.entries(MAPA_JUGADORES).map(([icono, avatar]) => [avatar, icono])
+);
+
 if (tarjetaPerfil) { 
     
     // Función 1: Girar la tarjeta (excepto si tocan el botón)
@@ -41,14 +54,22 @@ if (tarjetaPerfil) {
         }
     });
 
-    // Función 2: Revelar jugador
+    // Función 2: Revelar jugador usando objeto de mapeo
     if (btnRevelar && imagenPerfil) {
         btnRevelar.addEventListener('click', function() {
-            if (imagenPerfil.src.includes('sombrero')) {
-                imagenPerfil.src = 'img/avatar-flavia.png';
+            // Extraemos solo el nombre del archivo de la ruta actual
+            const archivoActual = imagenPerfil.src.split('/').pop();
+
+            if (MAPA_JUGADORES[archivoActual]) {
+                // Si es un ícono conocido, revelamos su avatar
+                const avatar = MAPA_JUGADORES[archivoActual];
+                imagenPerfil.src = `img/${avatar}`;
                 btnRevelar.textContent = 'Ocultar Jugador';
-            } else {
-                imagenPerfil.src = 'img/sombrero.png';
+                
+            } else if (MAPA_INVERSO[archivoActual]) {
+                // Si es un avatar conocido, lo volvemos a ocultar con su ícono
+                const icono = MAPA_INVERSO[archivoActual];
+                imagenPerfil.src = `img/${icono}`;
                 btnRevelar.textContent = 'Revelar Jugador';
             }
         });
