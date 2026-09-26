@@ -34,8 +34,7 @@ const imagenPerfil = document.getElementById('imagen-perfil');
 const MAPA_JUGADORES = {
     'perro.png': 'avatar-brian.png',
     'sombrero.png': 'avatar-flavia.png',
-    // Si agregas más jugadores en el futuro, súmalos acá. Ej:
-    // 'bigote.png': 'avatar_carlos.png'
+    'auto.png': 'avatar-pedro.png' // <-- Agregamos el avatar que subió Pedro
 };
 
 // Diccionario inverso: Se genera solo para saber a qué ícono volver
@@ -54,22 +53,19 @@ if (tarjetaPerfil) {
         }
     });
 
-    // Función 2: Revelar jugador usando objeto de mapeo
+    // Función 2: Revelar jugador (CORREGIDA con la lógica del diccionario)
     if (btnRevelar && imagenPerfil) {
         btnRevelar.addEventListener('click', function() {
-            // Extraemos solo el nombre del archivo de la ruta actual
+            // Sacamos solo el nombre del archivo actual (ej: "perro.png")
             const archivoActual = imagenPerfil.src.split('/').pop();
-
+            
             if (MAPA_JUGADORES[archivoActual]) {
-                // Si es un ícono conocido, revelamos su avatar
-                const avatar = MAPA_JUGADORES[archivoActual];
-                imagenPerfil.src = `img/${avatar}`;
+                // Está en modo ícono -> revelamos avatar
+                imagenPerfil.src = 'img/' + MAPA_JUGADORES[archivoActual];
                 btnRevelar.textContent = 'Ocultar Jugador';
-                
             } else if (MAPA_INVERSO[archivoActual]) {
-                // Si es un avatar conocido, lo volvemos a ocultar con su ícono
-                const icono = MAPA_INVERSO[archivoActual];
-                imagenPerfil.src = `img/${icono}`;
+                // Está en modo avatar -> volvemos a ocultar con su ícono
+                imagenPerfil.src = 'img/' + MAPA_INVERSO[archivoActual];
                 btnRevelar.textContent = 'Revelar Jugador';
             }
         });
