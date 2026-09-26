@@ -53,19 +53,53 @@ if (tarjetaPerfil) {
         }
     });
 
-    // Función 2: Revelar jugador (CORREGIDA con la lógica del diccionario)
+<<<<<<<<< Temporary merge branch 1
+    // Función 2: Revelar jugador
+    // Diccionario de correspondencia directa: asocia el nombre de archivo de cada ícono con su avatar correspondiente
+    const mapaJugadores = {
+        'sombrero.png': 'avatar-flavia.png',
+        'auto.png': 'avatar-pedro.png',
+        'perro.png': 'avatar-brian.png',
+        'dedal.png': 'avatar-ludmila.png'
+    };
+
+    // Mapeo inverso generado automáticamente (avatar -> ícono) para poder revertir el cambio sin repetir datos
+    const mapaInverso = Object.fromEntries(
+        Object.entries(mapaJugadores).map(([icono, avatar]) => [avatar, icono]));
+
+    // Se verifica la existencia de los elementos antes de adjuntar el listener
     if (btnRevelar && imagenPerfil) {
         btnRevelar.addEventListener('click', function() {
-            // Sacamos solo el nombre del archivo actual (ej: "perro.png")
+            // Extrae únicamente el nombre del archivo actual ignorando la ruta completa (ej: "sombrero.png")
             const archivoActual = imagenPerfil.src.split('/').pop();
             
-            if (MAPA_JUGADORES[archivoActual]) {
-                // Está en modo ícono -> revelamos avatar
-                imagenPerfil.src = 'img/' + MAPA_JUGADORES[archivoActual];
+            // Si la imagen actual es un ícono, se sustituye por su avatar y se actualiza el texto del botón
+            if (mapaJugadores[archivoActual]) {
+                const avatar = mapaJugadores[archivoActual];
+                imagenPerfil.src = `img/${avatar}`;
                 btnRevelar.textContent = 'Ocultar Jugador';
+
+            // Si la imagen actual es un avatar, se restaura el ícono original correspondiente y se cambia el texto
+            } else if (mapaInverso[archivoActual]) {
+                const icono = mapaInverso[archivoActual];
+=========
+    // Función 2: Revelar jugador usando objeto de mapeo
+    if (btnRevelar && imagenPerfil) {
+        btnRevelar.addEventListener('click', function() {
+            // Extraemos solo el nombre del archivo de la ruta actual
+            const archivoActual = imagenPerfil.src.split('/').pop();
+
+            if (MAPA_JUGADORES[archivoActual]) {
+                // Si es un ícono conocido, revelamos su avatar
+                const avatar = MAPA_JUGADORES[archivoActual];
+                imagenPerfil.src = `img/${avatar}`;
+                btnRevelar.textContent = 'Ocultar Jugador';
+                
             } else if (MAPA_INVERSO[archivoActual]) {
-                // Está en modo avatar -> volvemos a ocultar con su ícono
-                imagenPerfil.src = 'img/' + MAPA_INVERSO[archivoActual];
+                // Si es un avatar conocido, lo volvemos a ocultar con su ícono
+                const icono = MAPA_INVERSO[archivoActual];
+>>>>>>>>> Temporary merge branch 2
+                imagenPerfil.src = `img/${icono}`;
                 btnRevelar.textContent = 'Revelar Jugador';
             }
         });
