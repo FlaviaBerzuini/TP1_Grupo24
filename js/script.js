@@ -83,55 +83,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Esto es para que no se vaya para cualquier lado las casillas. Sino se puede modifcar en el html para que quede en orden 
     const ordenRecorrido = [
-        '.esquina-sup-izq',  // 0: SALIDA
-        '.col-2',            // 1: HTML5
-        '.col-3',            // 2: CSS3
-        '.col-4',            // 3: GIT
-        '.col-5',            // 4: GITHUB
-        '.esquina-sup-der',  // 5: DE VISITA NADA MÁS (Bitácora)
-        '.fila2-col6',       // 6: NODE.JS
-        '.fila3-col6',       // 7: EXPRESS
-        '.fila4-col6',       // 8: ENERGÍA
-        '.fila5-col6',       // 9: AWS
-        '.esquina-inf-der',  // 10: PARADA LIBRE (Equipo)
-        '.fila6-col5',       // 11: JAVASCRIPT
-        '.fila6-col4',       // 12: REACT
-        '.fila6-col3',       // 13: AGUA
-        '.fila6-col2',       // 14: SQL
-        '.esquina-inf-izq',  // 15: VÁYASE A LA CÁRCEL (Contacto)
-        '.fila5-col1',       // 16: KOTLIN
-        '.fila4-col1',       // 17: FIGMA
-        '.fila3-col1',       // 18: IMPUESTO
-        '.fila2-col1'        // 19: ANDROID
+        '.esquina-sup-izq', // 0: SALIDA
+        '.col-2', // 1: HTML5
+        '.col-3', // 2: CSS3
+        '.col-4', // 3: GIT
+        '.col-5', // 4: GITHUB
+        '.esquina-sup-der', // 5: DE VISITA NADA MÁS (Bitácora)
+        '.fila2-col6', // 6: NODE.JS
+        '.fila3-col6', // 7: EXPRESS
+        '.fila4-col6', // 8: ENERGÍA
+        '.fila5-col6', // 9: AWS
+        '.esquina-inf-der', // 10: PARADA LIBRE (Equipo)
+        '.fila6-col5', // 11: JAVASCRIPT
+        '.fila6-col4', // 12: REACT
+        '.fila6-col3', // 13: AGUA
+        '.fila6-col2', // 14: SQL
+        '.esquina-inf-izq', // 15: VÁYASE A LA CÁRCEL (Contacto)
+        '.fila5-col1', // 16: KOTLIN
+        '.fila4-col1', // 17: FIGMA
+        '.fila3-col1', // 18: IMPUESTO
+        '.fila2-col1' // 19: ANDROID
     ];
 
-    // Posición inicial (Índice 0 = SALIDA)
+    // 0 = SALIDA
     let casillaActualIndex = 0;
 
     if (btnDados) {
         btnDados.addEventListener('click', () => {
             btnDados.disabled = true;
 
-            
             const dado1 = Math.floor(Math.random() * 6) + 1;
             const dado2 = Math.floor(Math.random() * 6) + 1;
             const sumaDados = dado1 + dado2;
 
-        
             imgDados.classList.add('animar-dados');
             if (mensajeDados) {
                 mensajeDados.textContent = `🎲 Lanzando dados...`;
             }
 
-            
             document.querySelectorAll('.casilla').forEach(c => c.classList.remove('casilla-seleccionada'));
 
             setTimeout(() => {
                 imgDados.classList.remove('animar-dados');
 
-               
                 casillaActualIndex = (casillaActualIndex + sumaDados) % ordenRecorrido.length;
-                
                 
                 const selectorCasilla = ordenRecorrido[casillaActualIndex];
                 const casillaElegida = document.querySelector(selectorCasilla);
@@ -139,14 +134,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (casillaElegida) {
                     casillaElegida.classList.add('casilla-seleccionada');
 
-                
                     const nombreCasilla = casillaElegida.querySelector('strong')?.innerText.replace(/\n/g, ' ') || 'Casilla';
 
                     if (mensajeDados) {
                         mensajeDados.innerHTML = `Sacaste <strong>${dado1}</strong> + <strong>${dado2}</strong> = <strong>${sumaDados}</strong>.<br>Avanzaste ${sumaDados} posiciones hasta <strong>${nombreCasilla}</strong>.`;
                     }
 
-                    
                     setTimeout(() => {
                         btnDados.disabled = false;
 
