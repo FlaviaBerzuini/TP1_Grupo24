@@ -811,3 +811,134 @@ footer {
     border-color: #f59e0b !important;
     transition: all 0.3s ease;
 }
+
+/* 11. Bitácora */
+.contenedor-bitacora {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-grow: 1;
+}
+
+.hero-bitacora {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero-bitacora h1 {
+    color: #f59e0b;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.subtitulo-bitacora {
+    font-size: 1.2rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.seccion-bitacora {
+    margin-bottom: 50px;
+}
+
+.titulo-seccion {
+    color: #27ae60;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.entrada-bitacora {
+    background-color: #2c3e50;
+    border: 1px solid #455a64;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.entrada-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #1a252f;
+    border-bottom: 1px solid #333;
+}
+
+.entrada-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 100px;
+}
+
+.fecha-entrada {
+    color: #f59e0b;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.tipo-entrada {
+    background-color: #333;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.entrada-titulo {
+    flex-grow: 1;
+    margin: 0 20px;
+    font-size: 1.1rem;
+    color: #ecf0f1;
+}
+
+.btn-expandir {
+    background: none;
+    border: none;
+    color: #f59e0b;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Estado contraído por defecto */
+.entrada-contenido {
+    display: none;
+    padding: 25px;
+    background-color: #2c3e50;
+}
+
+/* Estado expandido */
+.entrada-bitacora.expandida .entrada-contenido {
+    display: block;
+}
+
+.entrada-bloque {
+    margin-bottom: 20px;
+}
+
+.entrada-bloque:last-child {
+    margin-bottom: 0;
+}
+
+.entrada-bloque h4 {
+    color: #aae0fa;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.entrada-bloque p, .entrada-bloque ul {
+    color: #d5d8dc;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.entrada-bloque ul {
+    padding-left: 20px;
+}

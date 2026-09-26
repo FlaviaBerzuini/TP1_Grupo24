@@ -16,7 +16,7 @@
             <div class="logo">DEVOPOLY | Equipo 24</div>
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="#integrantes">Integrantes</a></li>
+                <li><a href="index.html#integrantes">Integrantes</a></li>
                 <li><a href="bitacora.html">Bitácora</a></li>
                 <li><a href="#" id="abrir-contacto-menu">Contacto</a></li> 
             </ul>
@@ -58,7 +58,6 @@
 
                             <hr class="linea-frente">
                             
-                            <!-- Se agregó type="button" -->
                             <button type="button" id="btn-revelar" class="boton-accion">Revelar Jugador</button>
                         </div>
                     </div>
@@ -96,21 +95,31 @@
         </div>
     </main>
 
-    <!-- HTML DEL MODAL DE CONTACTO AGREGADO -->
-    <div id="modal-contacto" class="modal" style="display: none;">
-        <div class="modal-contenido">
-            <span id="cerrar-modal" class="cerrar-btn">&times;</span>
-            <h2>Contacto</h2>
-            <p>Acá va el contenido de tu formulario o medios de contacto.</p>
+    <!-- MODAL DE CONTACTO ACTUALIZADO (Tarjeta Policial) -->
+    <div id="modal-contacto" class="modal-overlay">
+        <div class="tarjeta-policial">
+            <button id="cerrar-modal" class="btn-cerrar">✖</button>
+            <h2>DECLARACIÓN POLICIAL</h2>
+            <p class="subtitulo">Expediente N° 24 - Devopoly</p>
+            <hr>
+            <p>Tiene derecho a dejar un mensaje. Todo lo que escriba será revisado por Devopoly.</p>
+            
+            <form action="#" method="POST" class="formulario-policial">
+                <label for="nombre">Sospechoso/a (Nombre):</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ej: John Doe">
+                
+                <label for="mensaje">Declaración:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escriba su mensaje aquí..."></textarea>
+                
+                <button type="submit" class="btn-enviar">Firmar Declaración</button>
+            </form>
         </div>
     </div>
 
-    <!-- Falta footer -->
     <footer class="pie-pagina">
         <p>&copy; 2026 Devopoly. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Vinculación del JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>

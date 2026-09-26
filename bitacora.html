@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora | Equipo 24 - Devopoly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="menu-superior">
+            <div class="logo">DEVOPOLY | Equipo 24</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#integrantes">Integrantes</a></li>
+                <li><a href="bitacora.html">Bitácora</a></li>
+                <li><a href="#" id="abrir-contacto-menu">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-bitacora">
+        
+        <!-- Hero / Introducción -->
+        <section class="hero-bitacora">
+            <h1>📖 BITÁCORA DE DESARROLLO</h1>
+            <p class="subtitulo-bitacora">Registro del proceso de desarrollo, decisiones técnicas y desafíos encontrados durante la construcción del sitio web DEVOPOLY</p>
+        </section>
+
+        <!-- Entradas organizadas por sección -->
+        <section class="entradas-bitacora">
+
+            <!-- ============================================
+                SECCIÓN: PLANIFICACIÓN Y CONCEPTO
+            ============================================ -->
+            <article class="seccion-bitacora">
+                <h2 class="titulo-seccion">
+                    <span class="icono-seccion">🎲</span>
+                    PLANIFICACIÓN Y CONCEPTO
+                </h2>
+
+                <!-- Entrada 1: Concepto del proyecto -->
+                <div class="entrada-bitacora expandida">
+                    <div class="entrada-encabezado">
+                        <div class="entrada-meta">
+                            <span class="fecha-entrada">Semana 1</span>
+                            <span class="tipo-entrada">Concepto</span>
+                        </div>
+                        <h3 class="entrada-titulo">Selección de temática: Monopoly como eje central</h3>
+                        <button class="btn-expandir" aria-label="Expandir entrada">▼</button>
+                    </div>
+                    <div class="entrada-contenido">
+                        <div class="entrada-bloque">
+                            <h4>Decisión</h4>
+                            <p>El equipo adoptó la temática del juego de mesa Monopoly como eje conceptual principal del proyecto web. Este enfoque permitiría diferenciar el sitio de propuestas convencionales.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Justificación</h4>
+                            <p>La temática Monopoly ofrece una metáfora efectiva para presentar a los integrantes: cada persona como una "propiedad", las habilidades representadas como "rentas", y los perfiles estructurados como "títulos de propiedad". Esta estructura proporciona coherencia visual y conceptual a través de toda la experiencia del usuario.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Desafío identificado</h4>
+                            <p>La comunicación inicial de la propuesta conceptual requirió múltiples iteraciones para que todos los integrantes comprendieran completamente cómo se implementaría la temática en el código y la estructura HTML.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Resolución</h4>
+                            <p>Se desarrolló una propuesta documentada que detallaba la estructura completa: tablero como portada, fichas como enlaces a perfiles, tarjetas de propiedad como presentación de datos individuales, y un sistema de navegación dual que permitiera explorar tanto a través del juego como mediante menú tradicional. Esta documentación facilitó la alineación del equipo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrada 2: Estrategia de desarrollo -->
+                <div class="entrada-bitacora expandida">
+                    <div class="entrada-encabezado">
+                        <div class="entrada-meta">
+                            <span class="fecha-entrada">Semana 1</span>
+                            <span class="tipo-entrada">Decisión</span>
+                        </div>
+                        <h3 class="entrada-titulo">Enfoque de desarrollo: estructura primero, detalles después</h3>
+                        <button class="btn-expandir" aria-label="Expandir entrada">▼</button>
+                    </div>
+                    <div class="entrada-contenido">
+                        <div class="entrada-bloque">
+                            <h4>Decisión</h4>
+                            <p>Se estableció una estrategia de desarrollo modular en fases: primero asegurar la estructura HTML correcta y funcional, luego implementar estilos CSS y comportamientos JavaScript, y finalmente ajustar detalles visuales y contenido personalizado.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Justificación</h4>
+                            <p>Este enfoque reduce la probabilidad de conflictos durante la integración de trabajo colaborativo. Permite que cada integrante trabaje en su perfil con un esquema base consistente, sin depender de que otros completen sus tareas estéticas primero.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Desafío identificado</h4>
+                            <p>Mantener consistencia en la estructura mientras se permite trabajo paralelo. Algunos integrantes presentaban versiones con datos incompletos o placeholders temporales.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Resolución</h4>
+                            <p>Se definieron patrones HTML comunes para todos los perfiles (estructura de tarjeta, clases CSS, disposición de elementos). Cada integrante completa su perfil siguiendo este patrón, incluyendo placeholders cuando datos específicos aún no están disponibles. Los detalles estéticos se unifican en una fase posterior.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrada 3: Sistema de control de versiones -->
+                <div class="entrada-bitacora">
+                    <div class="entrada-encabezado">
+                        <div class="entrada-meta">
+                            <span class="fecha-entrada">Semana 1</span>
+                            <span class="tipo-entrada">Decisión</span>
+                        </div>
+                        <h3 class="entrada-titulo">Organización en Git: ramas de trabajo independientes</h3>
+                        <button class="btn-expandir" aria-label="Expandir entrada">▼</button>
+                    </div>
+                    <div class="entrada-contenido">
+                        <div class="entrada-bloque">
+                            <h4>Decisión</h4>
+                            <p>Cada integrante del equipo trabaja en una rama independiente: <code>perfil-brian</code>, <code>perfil-flavia</code>, <code>pedro</code>, <code>perfil-ludmila</code>. Se creó además una rama dedicada a la bitácora de desarrollo.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Justificación</h4>
+                            <p>Las ramas independientes evitan conflictos directos en la rama principal (<code>main</code>). Cada integrante es responsable de su rama y puede trabajar sin interferencias. Facilita la revisión de cambios antes de hacer merge a main.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Desafío identificado</h4>
+                            <p>Algunos integrantes presentaron complejidad en la gestión de Git, particularmente en operaciones de merge, resolución de conflictos y sincronización con la rama principal.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Resolución</h4>
+                            <p>Se estableció comunicación directa entre integrantes para notificar cambios. Un integrante con mayor experiencia en Git se responsabilizó de revisar y ejecutar los merges hacia main, resolviendo conflictos cuando fuera necesario. Se agregaron validaciones en JavaScript (<code>if (elemento)</code>) para evitar errores cuando ciertos elementos no existen en todas las páginas.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+
+            <!-- ============================================
+                SECCIÓN: IMPLEMENTACIÓN DEL TABLERO
+            ============================================ -->
+            <article class="seccion-bitacora">
+                <h2 class="titulo-seccion">
+                    <span class="icono-seccion">🏁</span>
+                    IMPLEMENTACIÓN DEL TABLERO
+                </h2>
+
+                <!-- Entrada 4: Grid CSS para tablero -->
+                <div class="entrada-bitacora expandida">
+                    <div class="entrada-encabezado">
+                        <div class="entrada-meta">
+                            <span class="fecha-entrada">Semana 1-2</span>
+                            <span class="tipo-entrada">Implementación</span>
+                        </div>
+                        <h3 class="entrada-titulo">Tablero con CSS Grid: estructura 6x6 adaptada</h3>
+                        <button class="btn-expandir" aria-label="Expandir entrada">▼</button>
+                    </div>
+                    <div class="entrada-contenido">
+                        <div class="entrada-bloque">
+                            <h4>Decisión</h4>
+                            <p>Implementar el tablero principal usando CSS Grid con estructura de 6 columnas × 6 filas. A diferencia del Monopoly clásico (40 casillas grandes), el tablero se diseñó más compacto, permitiendo que encaje en una pantalla de escritorio sin necesidad de scroll.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Estructura del tablero</h4>
+                            <p>Las cuatro esquinas del tablero albergan los accesos principales: Salida/Inicio (superior izquierda), Parada Libre/Equipo (superior derecha), Váyase a la Cárcel/Contacto (inferior derecha), De Visita en la Cárcel/Bitácora (inferior izquierda). Las casillas laterales contienen referencias a tecnologías de desarrollo: HTML5, CSS3, GitHub, Vercel, JavaScript, entre otros. El centro del tablero aloja las fichas de jugadores, cartas de suerte/arca comunal y el botón de interactividad.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Desafío encontrado</h4>
+                            <p>Aplicar correctamente la propiedad <code>grid-area</code> con la sintaxis fila-inicio / columna-inicio / fila-fin / columna-fin para posicionar cada casilla sin superposiciones.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Resolución</h4>
+                            <p>Se utilizaron herramientas de desarrollo del navegador (Chrome DevTools) para visualizar el grid overlay. Se creó una clase CSS por cada posición (ej: <code>.col-2</code>, <code>.fila2-col1</code>). Se agregaron casillas incrementalmente, testeando después de cada cambio para verificar posicionamiento correcto.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrada 5: Navegación dual -->
+                <div class="entrada-bitacora">
+                    <div class="entrada-encabezado">
+                        <div class="entrada-meta">
+                            <span class="fecha-entrada">Semana 2</span>
+                            <span class="tipo-entrada">Implementación</span>
+                        </div>
+                        <h3 class="entrada-titulo">Sistema de navegación dual: tablero + menú tradicional</h3>
+                        <button class="btn-expandir" aria-label="Expandir entrada">▼</button>
+                    </div>
+                    <div class="entrada-contenido">
+                        <div class="entrada-bloque">
+                            <h4>Decisión</h4>
+                            <p>Implementar dos sistemas de navegación simultáneamente: navegación a través del tablero (fichas clickeables, casillas interactivas) y menú de navegación tradicional (links en el header).</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Justificación</h4>
+                            <p>Cumple con el requisito de la consigna de navegación fluida sin depender del botón atrás del navegador. Permite que usuarios exploren el sitio de forma lúdica a través del tablero, pero también ofrece acceso directo a través de menú convencional para quienes lo prefieran.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Desafío identificado</h4>
+                            <p>Asegurar que ambos sistemas de navegación funcionen de forma consistente sin conflictos. Posicionar las fichas de forma visible y accesible en el centro del tablero.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Resolución</h4>
+                            <p>Las fichas se implementan como elementos <code>&lt;a&gt;</code> con estilos circulares (<code>border-radius: 50%</code>), posicionadas en una sección central del grid. El menú superior mantiene la estructura de navegación estándar con hover effects. Ambos sistemas se probaron en múltiples navegadores para garantizar funcionamiento consistente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrada 6: Modal de contacto -->
+                <div class="entrada-bitacora">
+                    <div class="entrada-encabezado">
+                        <div class="entrada-meta">
+                            <span class="fecha-entrada">Semana 2</span>
+                            <span class="tipo-entrada">Implementación</span>
+                        </div>
+                        <h3 class="entrada-titulo">Modal de contacto: implementación del formulario de comunicación</h3>
+                        <button class="btn-expandir" aria-label="Expandir entrada">▼</button>
+                    </div>
+                    <div class="entrada-contenido">
+                        <div class="entrada-bloque">
+                            <h4>Decisión</h4>
+                            <p>Implementar un modal emergente para contacto, con estética temática ("Declaración Policial" coherente con Monopoly). El modal se abre al hacer clic en el enlace "Contacto" del menú o en la casilla "Váyase a la Cárcel" del tablero.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Justificación</h4>
+                            <p>Mantiene coherencia temática. Un modal es más eficiente que navegar a una página separada de contacto. Permite al usuario comunicarse sin abandonar el flujo principal del sitio.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Desafío resuelto</h4>
+                            <p>Hacer que el modal se abriera y cerrara correctamente sin efectos secundarios. Los botones presentaban comportamientos inesperados en diferentes contextos de la página.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Resolución</h4>
+                            <p>Se agregaron validaciones en JavaScript antes de adjuntar event listeners: <code>if (elemento)</code>. Esto evita errores cuando el elemento no existe en cierta página (el modal de contacto existe en index.html pero no en perfiles). El modal utiliza <code>classList.toggle()</code> para mostrar/ocultar, y se puede cerrar haciendo clic fuera del modal o en el botón de cerrar (✖).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+
+            <!-- ============================================
+                SECCIÓN: PERFILES INDIVIDUALES
+            ============================================ -->
+            <article class="seccion-bitacora">
+                <h2 class="titulo-seccion">
+                    <span class="icono-seccion">🎴</span>
+                    PERFILES INDIVIDUALES
+                </h2>
+
+                <!-- Entrada 7: Tarjetas 3D flip -->
+                <div class="entrada-bitacora expandida">
+                    <div class="entrada-encabezado">
+                        <div class="entrada-meta">
+                            <span class="fecha-entrada">Semana 2</span>
+                            <span class="tipo-entrada">Implementación</span>
+                        </div>
+                        <h3 class="entrada-titulo">Tarjetas de perfil con efecto 3D flip (CSS transforms)</h3>
+                        <button class="btn-expandir" aria-label="Expandir entrada">▼</button>
+                    </div>
+                    <div class="entrada-contenido">
+                        <div class="entrada-bloque">
+                            <h4>Decisión</h4>
+                            <p>Cada tarjeta de perfil posee dos caras: frente (datos personales y habilidades, representadas como "rentas") y reverso (películas y discos favoritos). Al hacer clic, la tarjeta rota 180 grados sobre su eje Y para mostrar la otra cara.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Justificación</h4>
+                            <p>El efecto simula las tarjetas de Monopoly físicas. Es visualmente atractivo e intuitivo. Permite presentar información adicional sin saturar el espacio. Cumple con el requisito de interactividad JavaScript en cada perfil.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Desafío técnico</h4>
+                            <p>Implementar correctamente CSS 3D transforms: <code>perspective</code>, <code>transform-style: preserve-3d</code>, <code>rotateY(180deg)</code>. Los textos en el reverso aparecían invertidos/ilegibles. Necesario entender <code>backface-visibility</code>.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Resolución</h4>
+                            <p>Se aplicó <code>backface-visibility: hidden</code> a ambas caras de la tarjeta para ocultar la cara posterior cuando no es visible. Se estableció <code>transform: rotateY(180deg)</code> exclusivamente en el reverso mediante CSS. JavaScript maneja el giro agregando/removiendo la clase <code>.girada</code> al hacer clic en la tarjeta.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrada 8: Avatares e integración de datos -->
+                <div class="entrada-bitacora expandida">
+                    <div class="entrada-encabezado">
+                        <div class="entrada-meta">
+                            <span class="fecha-entrada">Semana 2</span>
+                            <span class="tipo-entrada">Implementación</span>
+                        </div>
+                        <h3 class="entrada-titulo">Avatares generados con herramientas de IA y datos personales</h3>
+                        <button class="btn-expandir" aria-label="Expandir entrada">▼</button>
+                    </div>
+                    <div class="entrada-contenido">
+                        <div class="entrada-bloque">
+                            <h4>Decisión</h4>
+                            <p>Utilizar herramientas de IA para generar avatares de los integrantes. Inicialmente, cada perfil muestra un ícono temático (ficha de juego: perro, sombrero, auto, dedal). Al hacer clic en el botón "Revelar Jugador", se reemplaza el ícono por el avatar generado con IA.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Justificación</h4>
+                            <p>Proporciona privacidad opcional: los usuarios pueden elegir si desean ver el avatar completo o mantener la temática de fichas. Aprovecha herramientas de IA para contenido visual, como permite la consigna. Permite documentación clara del proceso en el README.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Desafíos encontrados</h4>
+                            <p>Algunos avatares generados presentaban fondos cuadriculados de transparencia. Además, se requería completar información personal de cada integrante (datos base, habilidades, películas favoritas, discos favoritos). En algunos casos, datos iniciales eran placeholders temporales que necesitaban actualización.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Resolución</h4>
+                            <p>Para fondos cuadriculados: se recomendó usar herramientas de procesamiento de imágenes (ej: <code>remove.bg</code>) para limpiar fondos. Para datos incompletos: se estableció que cada integrante es responsable de proporcionar y revisar su información personal antes de la entrega final. Se agregó un sistema de mapeo en JavaScript (diccionario <code>mapaJugadores</code>) que asocia iconos con avatares para facilitar el toggle.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrada 9: Botón revelar jugador -->
+                <div class="entrada-bitacora">
+                    <div class="entrada-encabezado">
+                        <div class="entrada-meta">
+                            <span class="fecha-entrada">Semana 2</span>
+                            <span class="tipo-entrada">Implementación</span>
+                        </div>
+                        <h3 class="entrada-titulo">Funcionalidad de toggle: Revelar/Ocultar Jugador</h3>
+                        <button class="btn-expandir" aria-label="Expandir entrada">▼</button>
+                    </div>
+                    <div class="entrada-contenido">
+                        <div class="entrada-bloque">
+                            <h4>Decisión</h4>
+                            <p>Implementar un botón que permite intercambiar la imagen mostrada entre la ficha de juego (ícono) y el avatar real del integrante.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Justificación</h4>
+                            <p>Proporciona interactividad adicional en cada perfil, más allá del flip de tarjeta. Cumple explícitamente con el requisito de "una función dinámica propia en cada página de perfil".</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Desafío técnico</h4>
+                            <p>Mapear correctamente cada ícono con su avatar correspondiente. Si el usuario alterna múltiples veces (revelar → ocultar → revelar), el sistema debe volver al ícono original sin generar errores.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Resolución</h4>
+                            <p>Se implementó un sistema de diccionarios en JavaScript: <code>mapaJugadores</code> (ícono → avatar) y <code>mapaInverso</code> (avatar → ícono), generado automáticamente. Al hacer clic en el botón, el código extrae el nombre del archivo actual usando <code>split()</code>, consulta el diccionario apropiado, reemplaza la imagen y actualiza el texto del botón entre "Revelar Jugador" y "Ocultar Jugador".</p>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+
+            <!-- ============================================
+                SECCIÓN: ARQUITECTURA Y DECISIONES FINALES
+            ============================================ -->
+            <article class="seccion-bitacora">
+                <h2 class="titulo-seccion">
+                    <span class="icono-seccion">⚙️</span>
+                    ARQUITECTURA Y DECISIONES FINALES
+                </h2>
+
+                <!-- Entrada 10: Estructura de archivos CSS y JS -->
+                <div class="entrada-bitacora expandida">
+                    <div class="entrada-encabezado">
+                        <div class="entrada-meta">
+                            <span class="fecha-entrada">Semana 2</span>
+                            <span class="tipo-entrada">Decisión</span>
+                        </div>
+                        <h3 class="entrada-titulo">Centralización de CSS y JavaScript: un único archivo por tipo</h3>
+                        <button class="btn-expandir" aria-label="Expandir entrada">▼</button>
+                    </div>
+                    <div class="entrada-contenido">
+                        <div class="entrada-bloque">
+                            <h4>Decisión</h4>
+                            <p>Todo el código CSS se centraliza en un único archivo <code>style.css</code>. Todo el código JavaScript se centraliza en un único archivo <code>script.js</code>. No se crean archivos separados por componente, sección o página.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Justificación</h4>
+                            <p>Respeta la estructura de carpetas requerida por la consigna (CSS en carpeta <code>css/</code>, JavaScript en carpeta <code>js/</code>). Un archivo centralizado es más fácil de mantener, debuggear y revisar. Evita complejidad innecesaria de imports/exports en un proyecto de esta escala.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Desafío identificado</h4>
+                            <p>Mantener código organizado y legible dentro de un único archivo sin que se vuelva caótico o difícil de navegar.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Resolución</h4>
+                            <p>Se organizan las secciones CSS con comentarios numerados (1. Reset, 2. Menú, 3. Contenedor, ..., 12. Bitácora) acompañados de separadores visuales claros. Cada sección agrupa estilos relacionados. Lo mismo en JavaScript: comentarios numerados diferenciando funcionalidades (1. Contacto, 2. Tarjetas, 3. Bitácora). Se mantiene indentación consistente y se evita código duplicado.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrada 11: Integración de ramas -->
+                <div class="entrada-bitacora">
+                    <div class="entrada-encabezado">
+                        <div class="entrada-meta">
+                            <span class="fecha-entrada">Semana 2</span>
+                            <span class="tipo-entrada">Proceso</span>
+                        </div>
+                        <h3 class="entrada-titulo">Merge de ramas: consolidación del trabajo colaborativo en main</h3>
+                        <button class="btn-expandir" aria-label="Expandir entrada">▼</button>
+                    </div>
+                    <div class="entrada-contenido">
+                        <div class="entrada-bloque">
+                            <h4>Decisión</h4>
+                            <p>Consolidar todas las ramas de trabajo independientes (<code>perfil-brian</code>, <code>perfil-flavia</code>, <code>perfil-pedro</code>, <code>perfil-ludmila</code>, rama de bitácora) hacia la rama principal <code>main</code>.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Justificación</h4>
+                            <p>Integración de trabajo para generar un sitio funcional completo. Permite verificar que todas las piezas funcionan correctamente juntas antes de publicación.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Desafío resuelto</h4>
+                            <p>Conflictos potenciales en Git entre ramas. Necesidad de revisar cambios antes de ejecutar merges. Algunos integrantes presentaban complejidad en la gestión de versiones.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Resolución</h4>
+                            <p>Un integrante con mayor experiencia en control de versiones se encargó de revisar cada rama antes de hacer merge. Se agregaron validaciones en JavaScript para evitar errores cuando ciertos elementos (como el modal de contacto) no existen en todas las páginas. Se revisó que <code>index.html</code> no presentara conflictos antes de cada merge.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrada 12: Estado del proyecto -->
+                <div class="entrada-bitacora">
+                    <div class="entrada-encabezado">
+                        <div class="entrada-meta">
+                            <span class="fecha-entrada">Semana 2 (Final)</span>
+                            <span class="tipo-entrada">Estado</span>
+                        </div>
+                        <h3 class="entrada-titulo">Estado de desarrollo: proyecto integrado y en fase de revisión</h3>
+                        <button class="btn-expandir" aria-label="Expandir entrada">▼</button>
+                    </div>
+                    <div class="entrada-contenido">
+                        <div class="entrada-bloque">
+                            <h4>Funcionalidades completadas</h4>
+                            <p>Tablero CSS Grid funcional. Sistema de navegación dual (tablero + menú). Perfiles individuales con efecto flip 3D. Botón "Revelar/Ocultar Jugador" en cada perfil. Modal de contacto con formulario temático. Bitácora de desarrollo. Estructura de archivos organizada. Estilos coherentes con temática Monopoly.</p>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Tareas pendientes</h4>
+                            <ul>
+                                <li>Validación de datos personales completos en cada perfil (habilidades, películas, discos)</li>
+                                <li>Procesamiento de imágenes de avatares (remover fondos si es necesario)</li>
+                                <li>Testing responsivo en breakpoints 400px, 900px, 1200px</li>
+                                <li>Verificación de funcionalidad en múltiples navegadores</li>
+                                <li>Completar README con documentación completa</li>
+                                <li>Publicación en Vercel</li>
+                            </ul>
+                        </div>
+                        <div class="entrada-bloque">
+                            <h4>Próximos pasos</h4>
+                            <p>Revisión final de contenidos. Testing de responsividad. Publicación en Vercel. Documentación completa en README.md incluyendo descripción del proyecto, integrantes, tecnologías, guía de estilos, explicación de funciones JavaScript con capturas de pantalla, y URL publicada.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- Modal de contacto (compartido con otras páginas) -->
+    <div id="modal-contacto" class="modal-overlay">
+        <div class="tarjeta-policial">
+            <button id="cerrar-modal" class="btn-cerrar">✖</button>
+            <h2>DECLARACIÓN POLICIAL</h2>
+            <p class="subtitulo">Expediente N° 24 - Devopoly</p>
+            <hr>
+            <p>Tiene derecho a dejar un mensaje. Todo lo que escriba será revisado por Devopoly.</p>
+            
+            <form action="#" method="POST" class="formulario-policial">
+                <label for="nombre">Sospechoso/a (Nombre):</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ej: John Doe">
+                
+                <label for="mensaje">Declaración:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escriba su mensaje aquí..."></textarea>
+                
+                <button type="submit" class="btn-enviar">Firmar Declaración</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="pie-pagina">
+        <p>&copy; 2026 Devopoly. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

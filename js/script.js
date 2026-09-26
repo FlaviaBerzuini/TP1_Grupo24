@@ -144,3 +144,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// 5. Intereactividad de la Bitácora
+document.addEventListener('DOMContentLoaded', () => {
+    const botonesExpandir = document.querySelectorAll('.btn-expandir');
+    
+    botonesExpandir.forEach(boton => {
+        boton.addEventListener('click', function() {
+            const entrada = this.closest('.entrada-bitacora');
+            
+            entrada.classList.toggle('expandida');
+          
+            if (entrada.classList.contains('expandida')) {
+                this.textContent = '▲';
+            } else {
+                this.textContent = '▼';
+            }
+        });
+    });
+});
