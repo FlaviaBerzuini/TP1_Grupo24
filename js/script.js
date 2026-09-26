@@ -54,24 +54,38 @@ if (tarjetaPerfil) {
         }
     });
 
-    // Función 2: Revelar jugador usando objeto de mapeo
-    if (btnRevelar && imagenPerfil) {
-        btnRevelar.addEventListener('click', function() {
-            // Extraemos solo el nombre del archivo de la ruta actual
-            const archivoActual = imagenPerfil.src.split('/').pop();
+    // Función 2: Revelar jugador
+        // Diccionario de correspondencia directa: asocia el nombre de archivo de cada ícono con su avatar
+        const mapaJugadores = {
+            'sombrero.png': 'avatar-flavia.png',
+            'auto.png': 'avatar-pedro.png',
+            'perro.png': 'avatar-brian.png',
+            'dedal.png': 'avatar-ludmila.png'
+        };
 
-            if (MAPA_JUGADORES[archivoActual]) {
-                // Si es un ícono conocido, revelamos su avatar
-                const avatar = MAPA_JUGADORES[archivoActual];
-                imagenPerfil.src = `img/${avatar}`;
-                btnRevelar.textContent = 'Ocultar Jugador';
+        // Mapeo inverso generado automáticamente (avatar -> ícono)
+        const mapaInverso = Object.fromEntries(
+            Object.entries(mapaJugadores).map(([icono, avatar]) => [avatar, icono])
+        );
+
+        // Se verifica la existencia de los elementos antes de adjuntar el evento
+        if (btnRevelar && imagenPerfil) {
+            btnRevelar.addEventListener('click', function() {
+                // Extrae únicamente el nombre del archivo actual
+                const archivoActual = imagenPerfil.src.split('/').pop();
                 
-            } else if (MAPA_INVERSO[archivoActual]) {
-                // Si es un avatar conocido, lo volvemos a ocultar con su ícono
-                const icono = MAPA_INVERSO[archivoActual];
-                imagenPerfil.src = `img/${icono}`;
-                btnRevelar.textContent = 'Revelar Jugador';
-            }
-        });
+                // Si la imagen actual es un ícono, se sustituye por su avatar
+                if (mapaJugadores[archivoActual]) {
+                    const avatar = mapaJugadores[archivoActual];
+                    imagenPerfil.src = `img/${avatar}`;
+                    btnRevelar.textContent = 'Ocultar Jugador';
+
+                // Si la imagen actual es un avatar, se restaura el ícono original
+                } else if (mapaInverso[archivoActual]) {
+                    const icono = mapaInverso[archivoActual];
+                    imagenPerfil.src = `img/${icono}`;
+                    btnRevelar.textContent = 'Revelar Jugador';
+                }
+            });
+        }
     }
-}
