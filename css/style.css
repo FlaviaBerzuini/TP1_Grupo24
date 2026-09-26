@@ -1,4 +1,5 @@
 /* 1. Reset básico */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,16 +8,22 @@
 }
 
 /* Tipografía para el tablero */
+
 h1, h2, h3, .logo, .casilla strong, .carta, .boton-jugar {
     font-family: 'Montserrat', sans-serif;
 }
 
 body {
     background-color: #1a252f;
+    background-image: radial-gradient(circle at 50% 50%, #2c3e50 0%, #080b12 100%);
     color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* 2. Menú superior */
+
 .menu-superior {
     display: flex;
     justify-content: space-between;
@@ -49,47 +56,85 @@ body {
 
 .nav-links a:hover {
     color: #f39c12;
-}
+} 
 
 /* 3. Contenedor principal */
+
 .contenedor-principal {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    gap: 40px;
-    padding: 30px;
-    max-width: 1200px;
+    gap: 60px; 
+    padding: 60px 30px 30px 30px; 
+    width: 100%;
+    max-width: 1600px; 
     margin: 0 auto; 
+    min-height: calc(100vh - 90px); 
 }
 
 /* 4. Panel lateral */
+
 .panel-lateral {
     flex: 1;
-    min-width: 250px;
+    min-width: 300px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    margin-top: 0;
+    margin-bottom: auto;
+    gap: 20px;
 }
 
 .bloque-instrucciones {
     background-color: #2c3e50;
-    padding: 25px;
+    padding: 35px;
     border-radius: 12px;
-    border: 1px solid #34495e;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    border: 1px solid #455a64;
+    border-top: 6px solid #f39c12;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .bloque-instrucciones h3 {
-    margin-bottom: 15px;
+    font-size: 2rem;
+    margin-bottom: 20px;
     color: #f39c12;
 }
 
 .bloque-instrucciones p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #ecf0f1;
+    margin-bottom: 20px;
+}
+
+/* Estilos de la lista */
+.lista-instrucciones {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-instrucciones li {
+    background-color: rgba(0, 0, 0, 0.15);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #27ae60;
+    font-size: 1.15rem;
     line-height: 1.5;
-    font-size: 0.95rem;
+    color: #d5d8dc;
+}
+
+.lista-instrucciones strong {
+    color: #f39c12;
+    font-size: 1.25rem;
 }
 
 /* 5. Tablero */
+
 .tablero {
-    flex: 2.5; 
+    flex: none; 
     background-color: #e5e5d3;
     border: 5px solid #111;
     border-radius: 10px;
@@ -98,12 +143,16 @@ body {
     grid-template-rows: repeat(6, 1fr);
     aspect-ratio: 1 / 1; 
     width: 100%;
-    max-width: 750px;
+    max-width: clamp(600px, 82vh, 1000px); 
+    box-shadow: 30px 35px 60px rgba(0,0,0,0.7), -2px -2px 15px rgba(255,255,255,0.08);
+    margin-top: 0;
+    margin-bottom: auto; 
 }
 
 /* Diseño base de cada casilla */
+
 .casilla {
-    background-color: #fff;
+    background-color: #d6e8df;
     border: 1px solid #333;
     display: flex;
     flex-direction: column;
@@ -112,20 +161,39 @@ body {
     text-align: center;
     text-decoration: none;
     color: #111;
-    font-size: 0.8rem;
+    font-size: 1rem;
     position: relative;
     overflow: hidden;
     padding: 5px;
 }
 
 .casilla:hover {
-    background-color: #f0f0f0;
+    background-color: #c4d9ce;
     cursor: pointer;
 }
 
 .casilla .icono {
     font-size: 1.2rem;
     margin-bottom: 4px;
+}
+
+.casilla strong, 
+.casilla small, 
+.casilla img {
+    position: relative;
+    z-index: 2;
+}
+
+.franja {
+    z-index: 1;
+}
+
+.fila-superior { padding-bottom: 25%; }
+.fila6-col2, .fila6-col3, .fila6-col4, .fila6-col5 { padding-top: 25%; }
+.fila2-col1, .fila3-col1, .fila4-col1, .fila5-col1 { padding-right: 25%; }
+.fila2-col6, .fila3-col6, .fila4-col6, .fila5-col6 { padding-left: 25%; }
+.col-4, .fila3-col1, .fila4-col6, .fila6-col3 {
+    padding: 5px !important; 
 }
 
 /* Franjas de color */
@@ -142,7 +210,7 @@ body {
     border-bottom: 1px solid #333;
 }
 
-/* Fila Ssuperior (centro / abajo) */
+/* Fila superior (centro / abajo) */
 .franja-abajo {
     bottom: 0;
     left: 0;
@@ -174,12 +242,39 @@ body {
 .color-violeta { background-color: #9b59b6; }
 .color-verde { background-color: #2ecc71; }
 .color-azul { background-color: #3498db; }
+.color-marron { background-color: #8b4513; }
+.color-celeste { background-color: #aae0fa; }
+.color-rojo { background-color: #e74c3c; }
+.color-amarillo { background-color: #f1c40f; }
+.color-azul-oscuro { background-color: #1e3799; }
 
 /* Posiciones esquinas */
-.esquina-sup-izq { grid-area: 1 / 1 / 2 / 2; background-color: #d2e5d3; } 
-.esquina-sup-der { grid-area: 1 / 6 / 2 / 7; background-color: #d2e5d3; } 
-.esquina-inf-der { grid-area: 6 / 6 / 7 / 7; background-color: #d2e5d3; } 
-.esquina-inf-izq { grid-area: 6 / 1 / 7 / 2; background-color: #f1948a; } 
+.esquina-sup-izq { grid-area: 1 / 1 / 2 / 2; background-color: #d6e8df; } 
+.esquina-sup-der { grid-area: 1 / 6 / 2 / 7; background-color: #d6e8df; } 
+.esquina-inf-der { grid-area: 6 / 6 / 7 / 7; background-color: #d6e8df; } 
+.esquina-inf-izq { grid-area: 6 / 1 / 7 / 2; background-color: #d6e8df; } 
+
+/* Estilo para las imágenes de las esquinas */
+.icono-esquina {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    object-position: bottom;
+    margin-bottom: 2px; 
+}
+
+.casilla-esquina strong {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.casilla-esquina small {
+    font-size: 0.7rem;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
 
 /* Posiciones fila superior */
 .col-2 { grid-area: 1 / 2 / 2 / 3; }
@@ -206,103 +301,128 @@ body {
 .fila6-col5 { grid-area: 6 / 5 / 7 / 6; }
 
 /* 6. Centro del Tablero */
+
 .centro-tablero {
     grid-column: 2 / 6;
     grid-row: 2 / 6;
-    background-color: #f2f7f2;
+    background-color: #d6e8df;
     border: 2px solid #ccc;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 25px;
     color: #333;
     padding: 10px;
     text-align: center;
     overflow: hidden;
 }
 
-.hero h1 { font-size: 1.8rem; }
-.hero p { font-size: 0.9rem; }
-
-/* Cartas centrales */
-.cartas-centrales {
-    display: flex;
-    gap: 15px;
+/* Logo */
+.logo-central {
+    width: 100%;
+    max-width: 400px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
 }
-
-.carta {
-    width: 100px;
-    height: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 0.8rem;
-    border: 2px solid #333;
-    border-radius: 8px;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.carta-suerte { background-color: #5d9b9b; color: white; transform: rotate(-10deg); }
-.carta-arca { background-color: #e6c229; color: #111; transform: rotate(15deg); }
-.carta:hover { transform: scale(1.1) rotate(0deg); }
 
 /* Botón tirar dados */
-.boton-jugar {
-    background-color: #c0392b;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: 2px solid #900;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 0 #900;
+.dados-imagen {
+    width: 140px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25));
+    transition: transform 0.3s ease;
 }
-.boton-jugar:active {
-    transform: translateY(4px);
-    box-shadow: none;
+
+.boton-jugar {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+/* Efecto al pasar el mouse */
+.boton-jugar:hover {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(245, 158, 11, 0.5);
+}
+
+/* Equipo */
+.titulo-equipo {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #555;
+    letter-spacing: 2px;
+    margin-bottom: -20px;
 }
 
 /* Fichas de los jugadores */
 .fichas-jugadores {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 25px;
     justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 15px;
 }
 
-.ficha-avatar {
+.ficha-peon {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 55px;
-    height: 55px;
-    background-color: #fff;
-    border: 3px solid #333;
-    border-radius: 50%;
+    
     text-decoration: none;
-    color: #111;
-    font-size: 0.7rem;
+    outline: none;
+}
+
+.ficha-peon img {
+    height: 70px;
+    object-fit: contain;
+    filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.4));
+    transition: all 0.3s ease;
+}
+
+.nombre-peon {
+    position: absolute;
+    bottom: -28px;
+    background-color: #1e293b;
+    color: #fff;
+    font-size: 0.75rem;
     font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    transition: transform 0.2s, background-color 0.2s;
+    padding: 4px 10px;
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-/* Ver que los colores de las tarjetas sean consistentes con los usados en el tablero */
-.ficha-brian { border-color: #2980b9; } 
-.ficha-ludmila { border-color: #e67e22; } 
-.ficha-pedro { border-color: #27ae60; } 
-.ficha-flavia { border-color: #27ae60; } 
-
-.ficha-avatar:hover {
-    transform: translateY(-5px); 
-    background-color: #f8f9fa;
+.ficha-peon:hover img {
+    transform: translateY(-8px) scale(1.1);
+    filter: drop-shadow(4px 8px 8px rgba(0,0,0,0.5));
 }
+
+.ficha-peon:hover .nombre-peon {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 7. Contacto / Declaración */
 
 .modal-overlay {
     display: none;
@@ -323,59 +443,62 @@ body {
 
 .tarjeta-policial {
     background-color: #f4f1ea;
-    padding: 30px;
+    padding: 50px;
     width: 90%;
-    max-width: 450px;
+    max-width: 850px;
     border: 3px solid #333;
     border-radius: 4px;
     position: relative;
     box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
     font-family: 'Courier New', Courier, monospace;
     color: #111;
+    font-size: 1.2rem;
 }
 
 .btn-cerrar {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 15px;
+    right: 20px;
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 2rem;
     cursor: pointer;
     color: #c0392b;
 }
 
 .tarjeta-policial h2 {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     margin-bottom: 5px;
     text-transform: uppercase;
 }
 
 .tarjeta-policial .subtitulo {
     font-weight: bold;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+    font-size: 1.1rem;
+    margin-bottom: 20px; 
 }
 
 .tarjeta-policial hr {
     border-top: 2px dashed #333;
-    margin-bottom: 15px;
+    margin-bottom: 25px; 
 }
 
 .formulario-policial {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
     margin-top: 20px;
 }
 
 .formulario-policial label {
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .formulario-policial input, 
 .formulario-policial textarea {
-    padding: 10px;
+    padding: 15px;
+    font-size: 1.1rem;
     font-family: 'Courier New', Courier, monospace;
     border: 2px solid #ccc;
     background-color: #fff;
@@ -390,23 +513,26 @@ body {
 .btn-enviar {
     background-color: #333;
     color: white;
-    padding: 12px;
+    padding: 18px;
     border: none;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.3rem;
     cursor: pointer;
     text-transform: uppercase;
-    margin-top: 10px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
 }
 
 .btn-enviar:hover {
     background-color: #111;
+    transform: scale(1.02);
 }
 
-/* 7. Perfiles individuales(tarjetas) */
+/* 8. Perfiles (tarjetas) */
 .fondo-perfil {
     background-color: #1a252f;
+    background-image: none;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -434,7 +560,7 @@ body {
     50% { opacity: 0.5; }
 }
 
-.tarjeta-propiedad { /* Ver esto cuando se ajuste lo responsivo */
+.tarjeta-propiedad {
     width: 90vw;
     max-width: 480px; 
     height: 780px;
@@ -584,7 +710,7 @@ body {
 /* Reverso de la tarjeta */
 .tarjeta-reverso { transform: rotateY(180deg); }
 
-/* Borde del reverso en rojo Monopoly */
+
 .borde-color-reverso-rojo {
     border: 12px solid #c0392b;
     background-color: #fff; 
@@ -594,17 +720,17 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Empuja el texto inferior bien abajo */
+    justify-content: space-between;
     align-items: center;
     padding: 30px 20px 20px 20px; 
 }
 
 .reverso-texto { 
     width: 100%; 
-    flex-grow: 1; /* Hace que este bloque ocupe todo el alto disponible */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra las listas verticalmente */
+    justify-content: center;
 }
 
 .reverso-texto h3 {
@@ -650,4 +776,38 @@ body {
     color: #777;
     font-style: italic;
     margin-top: 15px;
+}
+
+footer {
+    background-color: #111820;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #333;
+    color: #888;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* 9. Animación dados */
+.animar-dados {
+    animation: agitar 0.5s ease-in-out;
+}
+
+@keyframes agitar {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(-25deg) scale(1.1); }
+    50% { transform: rotate(25deg) scale(1.1); }
+    75% { transform: rotate(-10deg) scale(1.05); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+/* 10. Efecto para la casilla seleccionada */
+.casilla-seleccionada {
+    box-shadow: 0 0 20px 5px #f59e0b !important; /* Brillo naranja */
+    transform: scale(1.08) !important; /* La agranda un poquito */
+    z-index: 10 !important; /* La trae al frente para que no la tapen otras cosas */
+    border-color: #f59e0b !important;
+    transition: all 0.3s ease;
 }

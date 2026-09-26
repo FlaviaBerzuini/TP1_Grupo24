@@ -25,29 +25,15 @@ if (modal) {
     });
 }
 
-// 2. Intereactividad tarjetas (voltear tarjeta y revelar Foto)
+// 2. Interactividad tarjetas (voltear tarjeta y revelar)
 const tarjetaPerfil = document.getElementById('tarjeta-perfil');
 const btnRevelar = document.getElementById('btn-revelar');
 const imagenPerfil = document.getElementById('imagen-perfil');
-
-// Diccionario de mapeo: Relación 1 a 1 entre el archivo del ícono y el del avatar
-const MAPA_JUGADORES = {
-    'perro.png': 'avatar-brian.png',
-    'sombrero.png': 'avatar-flavia.png',
-    // Si agregas más jugadores en el futuro, súmalos acá. Ej:
-    // 'bigote.png': 'avatar_carlos.png'
-};
-
-// Diccionario inverso: Se genera solo para saber a qué ícono volver
-const MAPA_INVERSO = Object.fromEntries(
-    Object.entries(MAPA_JUGADORES).map(([icono, avatar]) => [avatar, icono])
-);
 
 if (tarjetaPerfil) { 
     
     // Función 1: Girar la tarjeta (excepto si tocan el botón)
     tarjetaPerfil.addEventListener('click', function(evento) {
-        // Si el clic NO fue en el botón de revelar, giramos la tarjeta
         if (evento.target !== btnRevelar) {
             const tarjetaInner = this.querySelector('.tarjeta-inner');
             tarjetaInner.classList.toggle('girada');
@@ -55,37 +41,106 @@ if (tarjetaPerfil) {
     });
 
     // Función 2: Revelar jugador
-        // Diccionario de correspondencia directa: asocia el nombre de archivo de cada ícono con su avatar
-        const mapaJugadores = {
-            'sombrero.png': 'avatar-flavia.png',
-            'auto.png': 'avatar-pedro.png',
-            'perro.png': 'avatar-brian.png',
-            'dedal.png': 'avatar-ludmila.png'
-        };
+    // Diccionario de correspondencia directa
+    const mapaJugadores = {
+        'sombrero.png': 'avatar-flavia.png',
+        'auto.png': 'avatar-pedro.png',
+        'perro.png': 'avatar-brian.png',
+        'dedal.png': 'avatar-ludmila.png'
+    };
 
-        // Mapeo inverso generado automáticamente (avatar -> ícono)
-        const mapaInverso = Object.fromEntries(
-            Object.entries(mapaJugadores).map(([icono, avatar]) => [avatar, icono])
-        );
+    // Mapeo inverso generado automáticamente (avatar -> ícono)
+    const mapaInverso = Object.fromEntries(
+        Object.entries(mapaJugadores).map(([icono, avatar]) => [avatar, icono])
+    );
 
-        // Se verifica la existencia de los elementos antes de adjuntar el evento
-        if (btnRevelar && imagenPerfil) {
-            btnRevelar.addEventListener('click', function() {
-                // Extrae únicamente el nombre del archivo actual
-                const archivoActual = imagenPerfil.src.split('/').pop();
-                
-                // Si la imagen actual es un ícono, se sustituye por su avatar
-                if (mapaJugadores[archivoActual]) {
-                    const avatar = mapaJugadores[archivoActual];
-                    imagenPerfil.src = `img/${avatar}`;
-                    btnRevelar.textContent = 'Ocultar Jugador';
+    // Se verifica la existencia de los elementos antes de adjuntar el evento
+    if (btnRevelar && imagenPerfil) {
+        btnRevelar.addEventListener('click', function() {
+            const archivoActual = imagenPerfil.src.split('/').pop();
+            
+            // Si la imagen actual es un ícono, se sustituye por su avatar
+            if (mapaJugadores[archivoActual]) {
+                const avatar = mapaJugadores[archivoActual];
+                imagenPerfil.src = `img/${avatar}`;
+                btnRevelar.textContent = 'Ocultar Jugador';
 
-                // Si la imagen actual es un avatar, se restaura el ícono original
-                } else if (mapaInverso[archivoActual]) {
-                    const icono = mapaInverso[archivoActual];
-                    imagenPerfil.src = `img/${icono}`;
-                    btnRevelar.textContent = 'Revelar Jugador';
-                }
-            });
-        }
+            // Si la imagen actual es un avatar, se restaura el ícono original
+            } else if (mapaInverso[archivoActual]) {
+                const icono = mapaInverso[archivoActual];
+                imagenPerfil.src = `img/${icono}`;
+                btnRevelar.textContent = 'Revelar Jugador';
+            }
+        });
     }
+}
+
+// 3. Lógica de dados y casillas del tablero
+document.addEventListener('DOMContentLoaded', () => {
+    const btnDados = document.getElementById('btn-dados');
+    const imgDados = document.querySelector('.dados-imagen');
+    const casillas = document.querySelectorAll('.casilla');
+
+    if(btnDados) {
+        btnDados.addEventListener('click', () => {
+            
+            // 1. Animamos los dados
+            imgDados.classList.add('animar-dados');
+            
+            // 2. Limpiamos selecciones anteriores
+            casillas.forEach(casilla => casilla.classList.remove('casilla-seleccionada'));
+
+            // 3. Esperamos que termine de agitarse (500ms)
+            setTimeout(() => {
+                imgDados.classList.remove('animar-dados');
+
+                // Elegimos la casilla al azar
+                const indiceAleatorio = Math.floor(Math.random() * casillas.length);
+                const casillaElegida = casillas[indiceAleatorio];
+
+                // Iluminamos la casilla
+                casillaElegida.classList.add('casilla-seleccionada');
+                
+                // Esperamos 1.2 segundos
+                setTimeout(() => {
+                    if (casillaElegida.tagName.toLowerCase() === 'a') {
+                        // Verificamos si la casilla ganadora es la de contacto/cárcel
+                        if (casillaElegida.id === 'abrir-contacto-casilla') {
+                            const modal = document.getElementById('modal-contacto');
+                            if (modal) modal.classList.add('activo');
+                        } else {
+                            // Para cualquier otra casilla con enlace (Bitácora, Equipo), navega normal
+                            casillaElegida.click(); 
+                        }
+                    } else {
+                        console.log("Caíste en una tecnología: " + casillaElegida.innerText);
+                    }
+                }, 1200);
+                
+            }, 500); 
+        });
+    }
+});
+
+// 4. Simular envío del formulario policial
+document.addEventListener('DOMContentLoaded', () => {
+    const btnEnviar = document.querySelector('.btn-enviar');
+    
+    if (btnEnviar) {
+        btnEnviar.addEventListener('click', (evento) => {
+            evento.preventDefault();
+            // Mostramos un mensaje de éxito
+            alert("¡Declaración registrada en el expediente de Devopoly con éxito!");
+
+            // Cerramos automáticamente después de enviar
+            const modal = document.getElementById('modal-contacto');
+            if (modal) {
+                modal.classList.remove('activo');
+            }
+            
+            //Limpiar los campos de texto
+            const inputs = document.querySelectorAll('.formulario-policial input, .formulario-policial textarea');
+            inputs.forEach(input => input.value = '');
+        });
+    }
+});

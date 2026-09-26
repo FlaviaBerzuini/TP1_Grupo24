@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipo 24 | TP1 - Devopoly</title> <!-- REvisar el título, nomnbre del grupo -->
+    <title>Equipo 24 | TP1 - Devopoly</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,157 +18,177 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="#integrantes">Integrantes</a></li>
                 <li><a href="bitacora.html">Bitácora</a></li>
-                <li><a href="#" id="abrir-contacto-menu">Contacto</a></li> <!-- Ver contacto -->
+                <li><a href="#" id="abrir-contacto-menu">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="contenedor-principal">
         
-        <!-- Tablero --> <!-- Ajustar el tamaño del tablero -->
+        <!-- Tablero -->
         <section class="tablero">
             
-            <!-- Esquinas -->
+           <!-- Esquinas -->
             <a href="index.html" class="casilla esquina esquina-sup-izq">
-                <span class="icono">🏁</span> <!-- La idea es cambiar estos iconos por imagenes -->
+                <img src="img/salida.png" alt="Salida" class="icono-esquina icono-flecha">
                 <strong>SALIDA</strong>
                 <small>INICIO</small>
             </a>
 
-            <a href="#integrantes" class="casilla esquina esquina-sup-der">
-                <span class="icono">🅿️</span>
+            <a href="bitacora.html" class="casilla esquina esquina-sup-der">
+                <img src="img/visitacarcel.png" alt="De visita nada más" class="icono-esquina">
+                <strong>DE VISITA<br>NADA MÁS</strong>
+                <small>BITÁCORA</small>
+            </a>
+
+            <a href="#integrantes" class="casilla esquina esquina-inf-der">
+                <img src="img/parada.png" alt="Parada Libre" class="icono-esquina">
                 <strong>PARADA LIBRE</strong>
-                <small>Equipo</small>
+                <small>EQUIPO</small>
             </a>
 
-            <a href="#" id="abrir-contacto-casilla" class="casilla esquina esquina-inf-der">
-                <span class="icono">👮</span>
-                <strong>VÁYASE A LA CÁRCEL</strong>
-                <small>Contacto</small>
+            <a href="#" id="abrir-contacto-casilla" class="casilla esquina esquina-inf-izq">
+                <img src="img/policia.png" alt="Váyase a la cárcel" class="icono-esquina">
+                <strong>VÁYASE A<br>LA CÁRCEL</strong>
+                <small>CONTACTO</small>
             </a>
 
-            <a href="bitacora.html" class="casilla esquina esquina-inf-izq">
-                <span class="icono">📖</span>
-                <strong>DE VISITA EN LA CÁRCEL</strong>
-                <small>Bitácora</small>
-            </a>
-
-            <!-- Fila Superior -->
+            <!-- Fila superior -->
             <div class="casilla fila-superior col-2">
-                <div class="franja color-naranja franja-abajo"></div> <!-- Hay que agregar las franjas de color en todas las casillas -->
-                <strong>HTML5</strong> <!-- Agregar iconos o mejor imagenes referenciales a las casillas -->
-                <small>Avenida</small> <!-- Revisar el nombre de las casillas -->
+                <div class="franja color-marron franja-abajo"></div>
+                <strong>HTML5</strong>
+                <small>Estructura</small>
             </div>
 
             <div class="casilla fila-superior col-3">
-                <div class="franja color-naranja franja-abajo"></div>
+                <div class="franja color-marron franja-abajo"></div>
                 <strong>CSS3</strong>
-                <small>Avenida</small>
+                <small>Estilos</small>
             </div>
 
             <div class="casilla fila-superior col-4">
-                <div class="franja color-naranja franja-abajo"></div>
-                <strong>GitHub</strong>
-                <small>Repositorio</small>
+                <img src="img/ferrocarril.png" alt="Ferrocarril" style="width: 35px; margin-bottom: 4px;">
+                <strong>GIT</strong>
+                <small>Terminal</small>
             </div>
 
             <div class="casilla fila-superior col-5">
-                <div class="franja color-naranja franja-abajo"></div>
-                <strong>Vercel</strong>
-                <small>Deploy</small>
+                <div class="franja color-celeste franja-abajo"></div>
+                <strong>GITHUB</strong>
+                <small>Repositorio</small>
             </div>
 
             <!-- Columna lateral izquierda -->
-            <div class="casilla fila2-col1">
-                <div class="franja color-violeta franja-derecha"></div>
-                <strong>JavaScript</strong>
-                <small>Calle JS</small>
-            </div>
-            <div class="casilla fila3-col1">
-                <div class="franja color-violeta franja-derecha"></div>
-                <strong>Bug</strong>
-                <small>Pierdes turno</small>
-            </div>
-            <div class="casilla fila4-col1">
-                <div class="franja color-violeta franja-derecha"></div>
-                <strong>Equipo</strong>
-                <small>Avanzá 2</small>
-            </div>
             <div class="casilla fila5-col1">
-                <div class="franja color-violeta franja-derecha"></div>
-                <strong>Suerte</strong>
-                <small>Sacá carta</small>
+                <div class="franja color-verde franja-derecha"></div>
+                <strong>KOTLIN</strong>
+                <small>Mobile</small>
+            </div>
+            
+            <div class="casilla fila4-col1">
+                <div class="franja color-verde franja-derecha"></div>
+                <strong>FIGMA</strong>
+                <small>Prototipado</small>
             </div>
 
-            <!-- Columna lateral derecha -->
+            <div class="casilla fila3-col1">
+                <img src="img/impuestos.png" alt="Impuestos" style="width: 35px; margin-bottom: 4px;">
+                <strong>IMPUESTO</strong>
+                <small>Al hosting</small>
+            </div>
+            
+            <div class="casilla fila2-col1">
+                <div class="franja color-azul-oscuro franja-derecha"></div>
+                <strong>ANDROID</strong>
+                <small>Studio</small>
+            </div>
+
+           <!-- Columna lateral derecha -->
             <div class="casilla fila2-col6">
-                <div class="franja color-verde franja-izquierda"></div>
-                <strong>Proyectos</strong>
-                <small>Construyendo</small>
+                <div class="franja color-violeta franja-izquierda"></div>
+                <strong>NODE.JS</strong>
+                <small>Entorno</small>
             </div>
+            
             <div class="casilla fila3-col6">
-                <div class="franja color-verde franja-izquierda"></div>
-                <strong>Comunidad</strong>
-                <small>Compartir</small>
+                <div class="franja color-violeta franja-izquierda"></div>
+                <strong>EXPRESS</strong>
+                <small>Framework</small>
             </div>
+
             <div class="casilla fila4-col6">
-                <div class="franja color-verde franja-izquierda"></div>
-                <strong>Nube</strong>
-                <small>AWS</small>
+                <img src="img/electricidad.png" alt="Electricidad" style="width: 35px; margin-bottom: 4px;">
+                <strong>ENERGÍA</strong>
+                <small>Servidores</small>
             </div>
+            
             <div class="casilla fila5-col6">
-                <div class="franja color-verde franja-izquierda"></div>
-                <strong>Retos</strong>
-                <small>Desafíos</small>
+                <div class="franja color-naranja franja-izquierda"></div>
+                <strong>AWS</strong>
+                <small>Nube</small>
             </div>
 
             <!-- Fila inferior -->
-            <div class="casilla fila6-col2">
-                <div class="franja color-azul franja-arriba"></div>
-                <strong>Decisiones</strong>
-                <small>Planificamos</small>
-            </div>
-            <div class="casilla fila6-col3">
-                <div class="franja color-azul franja-arriba"></div>
-                <strong>Retros</strong>
-                <small>Mejoramos</small>
-            </div>
-            <div class="casilla fila6-col4">
-                <div class="franja color-azul franja-arriba"></div>
-                <strong>Mejoras</strong>
-                <small>Evolución</small>
-            </div>
             <div class="casilla fila6-col5">
-                <div class="franja color-azul franja-arriba"></div>
-                <strong>Lecciones</strong>
-                <small>Aprendemos</small>
+                <div class="franja color-rojo franja-arriba"></div>
+                <strong>JAVASCRIPT</strong>
+                <small>Lógica</small>
+            </div>
+
+            <div class="casilla fila6-col4">
+                <div class="franja color-rojo franja-arriba"></div>
+                <strong>REACT</strong>
+                <small>Librería</small>
+            </div>
+            
+            <div class="casilla fila6-col3">
+                <img src="img/agua.png" alt="Servicio de Agua" style="width: 35px; margin-bottom: 4px;">
+                <strong>AGUA</strong>
+                <small>Clean Code</small>
+            </div>
+
+            <div class="casilla fila6-col2">
+                <div class="franja color-amarillo franja-arriba"></div>
+                <strong>SQL</strong>
+                <small>Base de datos</small>
             </div>
                                     
             <!-- Espacio central del tablero-->
             <div class="centro-tablero">
                 
-                <!-- Título y propósito --> <!-- El tema del propósito quizás lo pasaría a debajo de como queres jugar -->
+                <!-- Logo --> 
                 <section class="hero text-center">
-                    <h1>DEVOPOLY</h1>
-                    <p>Equipo 24: Construir código.</p> <!-- Ver el tema del propósito del equipo -->
+                    <img src="img/logo.png" alt="Devopoly Logo" class="logo-central">
                 </section>
 
-                <!-- Cartas de suerte y arca comunal -->
-                <div class="cartas-centrales">
-                    <div class="carta carta-suerte">🍀 SUERTE</div> <!-- Ver la funcionaidad de estás cartas y reemplazar algunos casillero para suerte y arca comunal -->
-                    <div class="carta carta-arca">💼 ARCA COMUNAL</div>
-                </div>
+                <!-- Dados -->
+                <img src="img/dados.png" alt="Dados" class="dados-imagen">
 
-                <!-- Botón de Dados --> <!-- Imágen de dados en la parte superior del botón? -->
-                <button id="btn-dados" class="boton-jugar">TIRAR DADOS</button> <!-- Ver que funcione el tirar dado y como sería eso en el tablero -->
+                <!-- Botón de dados --> 
+                <button id="btn-dados" class="boton-jugar">TIRAR DADOS</button> 
 
                 <!-- Las 4 fichas de los jugadores -->
-                <div id="integrantes"class="fichas-jugadores"> <!-- Este sería el acceso a los perfiles de los integrandes del grupo -->
-                    <a href="brian.html" class="ficha-avatar ficha-brian"><br>Brian</a>
-                    <a href="ludmila.html" class="ficha-avatar ficha-ludmila"><br>Ludmila</a>
-                    <a href="pedro.html" class="ficha-avatar ficha-pedro"><br>Pedro</a>
-                    <a href="flavia.html" class="ficha-avatar ficha-flavia">
-                        <img src="img/sombrero.png" alt="Sombrero" style="width: 25px; height: 25px; object-fit: contain;"> Flavia <!-- VER, yo dejaría sólo la ficha de cada jugador y quizas el nombre son el circulo de color -->
+                <p class="titulo-equipo">CONOCÉ AL EQUIPO</p>
+                <div id="integrantes" class="fichas-jugadores"> 
+                    
+                    <a href="brian.html" class="ficha-peon">
+                        <img src="img/perro.png" alt="Peón Perro">
+                        <span class="nombre-peon">Brian</span>
+                    </a>
+                    
+                    <a href="ludmila.html" class="ficha-peon">
+                        <img src="img/dedal.png" alt="Peón Dedal">
+                        <span class="nombre-peon">Ludmila</span>
+                    </a>
+                    
+                    <a href="pedro.html" class="ficha-peon">
+                        <img src="img/auto.png" alt="Peón Auto">
+                        <span class="nombre-peon">Pedro</span>
+                    </a>
+                    
+                    <a href="flavia.html" class="ficha-peon">
+                        <img src="img/sombrero.png" alt="Peón Sombrero">
+                        <span class="nombre-peon">Flavia</span>
                     </a>
                 </div>
 
@@ -176,17 +196,35 @@
             
         </section>
 
-        <!-- Panel lateral --> <!-- Esto falta desarrollar -->
+        <!-- Panel lateral -->
         <aside class="panel-lateral">
+            <!-- Bloque 1: Instrucciones -->
             <div class="bloque-instrucciones">
                 <h3>¿Cómo querés jugar?</h3>
-                <p>Tirá los dados para explorar el tablero o usá el menú superior para ir directo a cada sección.</p> 
+                <p>Tirá los dados para explorar el tablero o usá el menú superior para ir directo a cada sección. Solo tenés dos formas de navegar:</p>
+                
+                <ul class="lista-instrucciones">
+                    <li><strong>🎲 Jugando:</strong> Al tirar los dados o hacer clic en las casillas del tablero.</li>
+                    <li><strong>🖱️ Manualmente:</strong> Usando las opciones del menú superior.</li>
+                </ul>
+            </div>
+
+            <!-- Bloque 2: Propósito -->
+            <div class="bloque-instrucciones">
+                <h3>Nuestro propósito</h3>
+                <p>Es transformar ideas en experiencias interactivas sólidas:</p>
+                
+                <ul class="lista-instrucciones">
+                    <li><strong>🎨 Interfaz visual:</strong> Maquetar vistas accesibles y atractivas.</li>
+                    <li><strong>⚙️ Código limpio:</strong> Utilizar las mejores prácticas de desarrollo web para construir estructuras escalables.</li>
+                    <li><strong>🤝 Colaboración:</strong> Unir nuestras soft skills y conocimientos técnicos para superar los desafíos.</li>
+                </ul>
             </div>
         </aside>
 
     </main>
 
-    <!-- Esto sería una opción que se me ocurrió para el contacto pero lo podemos hacer tipo formulario también-->
+
     <!-- Contacto oculto, aparce al hacer clic -->
     <div id="modal-contacto" class="modal-overlay">
         <div class="tarjeta-policial">
