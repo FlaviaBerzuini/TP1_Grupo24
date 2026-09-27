@@ -145,6 +145,28 @@
     
         </div>
 
+
+        <!-- Contacto oculto, aparce al hacer clic -->
+        <div id="modal-contacto" class="modal-overlay">
+            <div class="tarjeta-policial">
+                <button id="cerrar-modal" class="btn-cerrar">✖</button>
+                <h2>DECLARACIÓN POLICIAL</h2>
+                <p class="subtitulo">Expediente N° 24 - Devopoly</p>
+                <hr>
+                <p>Tiene derecho a dejar un mensaje. Todo lo que escriba será revisado por Devopoly.</p>
+                
+                <form action="#" method="POST" class="formulario-policial">
+                    <label for="nombre">Sospechoso/a (Nombre):</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: John Doe">
+                    
+                    <label for="mensaje">Declaración:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escriba su mensaje aquí..."></textarea>
+                    
+                    <button type="submit" class="btn-enviar">Firmar Declaración</button>
+                </form>
+            </div>
+        </div>
+
         <footer class="pie-pagina">
             <div class="footer-contenido-centrado">
                 <img src="img/favicon.png" alt="Logo Devopoly" class="logo-footer">
