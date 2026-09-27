@@ -435,7 +435,8 @@ body {
 
 .nombre-peon {
     position: absolute;
-    bottom: -28px;
+    bottom: 100%;         /* Lo empuja exactamente arriba del ícono */
+    margin-bottom: 10px;  /* Le da un poco de respiro de separación */
     background-color: #1e293b;
     color: #fff;
     font-size: 0.7rem;
@@ -443,7 +444,7 @@ body {
     padding: 4px 8px;
     border-radius: 4px;
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(10px); /* Empieza un poco más abajo para el efecto de entrada */
     transition: all 0.3s ease;
     white-space: nowrap;
     pointer-events: none;
