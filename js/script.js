@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// 5. Intereactividad de la Bitácora
+// 5. Intereactividad de la bitácora
 document.addEventListener('DOMContentLoaded', () => {
     const botonesExpandir = document.querySelectorAll('.btn-expandir');
     
