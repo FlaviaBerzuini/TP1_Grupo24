@@ -69,11 +69,12 @@ TP1_Grupo24/
 --#fffde7 — Fondo crema/amarillento del mensaje de dados.
 
 ## Interactividad (javascript)
-* **Portada:** 
-[Portada](img/portada.png)
 
-Descripción:
-Es la página principal del proyecto. En esta interactuan el tablero con todos los demás elementos.
+### Portada
+
+![Portada del sitio](img/portada.png)
+
+Es la página principal del proyecto. En esta interactúan el tablero con todos los demás elementos.
 
 **Funciones dinámicas agregadas:**
 
@@ -85,20 +86,19 @@ Es la página principal del proyecto. En esta interactuan el tablero con todos l
 
 --Menú responsive: Un menú desplegable (hamburguesa) que se adapta automáticamente a dispositivos móviles.
 
+### Perfiles
 
-* **Perfiles:** 
-
-[Perfil](img/tarjeta_perfil_1.png)
-
--- Descripción:
 Sección individual dedicada a presentar la información de cada integrante del equipo con la estética de las tarjetas de propiedad de Monopoly.
 
-[Perfil 2](img/tarjeta_perfil_2.png)
+![Frente de la tarjeta de perfil](img/tarjeta_perfil_1.png)
 
--- Botón «Revelar Jugador»: Acción interactiva ubicada en la tarjeta que revela la imagen del avatar.
+--Presentación clara y consistente: cada tarjeta muestra foto o avatar, nombre, ciudad, edad y habilidades con la estética de "rentas" de Monopoly.
 
+![Botón Revelar Jugador](img/tarjeta_perfil_2.png)
 
-[Perfil 3](img/tarjeta_perfil_3.png)
+--Botón «Revelar Jugador»: Acción interactiva ubicada en la tarjeta que revela la imagen del avatar.
+
+![Reverso de la tarjeta con giro 3D](img/tarjeta_perfil_3.png)
 
 --Giro 3D de la tarjeta (Flip Card): Rotación en el eje Y (rotateY(180deg)) al hacer clic en la tarjeta para alternar entre el frente y el reverso.
 
@@ -115,6 +115,9 @@ Todas las herramientas mencionadas a continuación se utilizaron con **plan grat
 ### ChatGPT (OpenAI)
 * **Uso:** Generación de los avatares de los integrantes.
 * **Criterio:** Se empleó mediante un prompt unificado aplicado a fotografías de referencia, logrando un estilo gráfico homogéneo y consistente para las imágenes de los cuatro integrantes.
+* **Prompt utilizado:**
+
+> Con mi foto, pero respetando las características del personaje del juego Monopoly, ¿podés crear mi avatar? Mantené al sujeto en primer plano, con bordes limpios y suaves. Hacé que el fondo sea transparente y aplicá un recorte circular.
 
 ### Claude (Anthropic)
 * **Uso:** Asistencia como mentor técnico durante el desarrollo: apoyo conceptual sobre HTML, CSS y JavaScript, y redacción de la documentación de este README.
@@ -122,3 +125,10 @@ Todas las herramientas mencionadas a continuación se utilizaron con **plan grat
 
 ## Despliegue
 * **URL de Vercel:** _Pendiente de publicación._ Se actualizará este campo con el enlace correspondiente antes de la entrega final.
+
+## Evolución
+
+Este TP1 es la primera entrega de una serie de trabajos prácticos, por lo que quedan aspectos por definir y mejorar en las próximas instancias:
+
+* **Modo oscuro:** se discutió la posibilidad de incorporar un tema oscuro alternativo, pero no llegó a implementarse en esta entrega.
+* El resto de las mejoras para próximas instancias todavía no fueron definidas como equipo.
