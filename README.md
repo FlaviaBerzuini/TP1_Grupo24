@@ -21,8 +21,22 @@ El proyecto se divide en dos secciones principales:
 * [Brian Sabio](https://github.com/BrianSabio)
 
 ## Estructura del TP1
-* `index.html`, `bitacora.html` y perfiles individuales en la raíz.
-* carpetas `css/`, `js/` e `img/` separadas.
+```text
+TP1_Grupo24/
+├── index.html
+├── bitacora.html
+├── brian.html
+├── flavia.html
+├── ludmila.html
+├── pedro.html
+├── README.md
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+└── img/
+    └── imagenes y recursos graficos del proyecto
+```
 
 ## Tecnologías y guía de estilos
 * **Lenguajes:** html5, css3, javascript.
