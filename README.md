@@ -1,4 +1,4 @@
-# TP1
+# TP1 | Devopoly
 
 **Descripción:**
 
@@ -33,6 +33,7 @@ El proyecto se divide en dos secciones principales:
 --Roboto.
 
 * **paleta de colores:**
+
 -- #1a252f — Fondo general del body y del perfil.
 
 -- #2c3e50 — Gradiente del cuerpo, bloques de instrucciones y fondo secundario de la bitácora.
@@ -55,7 +56,7 @@ El proyecto se divide en dos secciones principales:
 
 ## Interactividad (javascript)
 * **Portada:** 
-[Portada](/img/Portada.png)
+[Portada](img/portada.png)
 
 Descripción:
 Es la página principal del proyecto. En esta interactuan el tablero con todos los demás elementos.
@@ -73,30 +74,37 @@ Es la página principal del proyecto. En esta interactuan el tablero con todos l
 
 * **Perfiles:** 
 
-[Perfil](//img/Tarjeta%20de%20perfil%201.png)
+[Perfil](img/tarjeta_perfil_1.png)
 
 -- Descripción:
 Sección individual dedicada a presentar la información de cada integrante del equipo con la estética de las tarjetas de propiedad de Monopoly.
 
-[Perfil 2 ](//img/Tarjeta%20perfil%202%20.png)
+[Perfil 2](img/tarjeta_perfil_2.png)
 
 -- Botón «Revelar Jugador»: Acción interactiva ubicada en la tarjeta que revela la imagen del avatar.
 
 
-[Perfil 3 ](//img/Tarjeta%20perfil%203%20.png)
+[Perfil 3](img/tarjeta_perfil_3.png)
 
 --Giro 3D de la tarjeta (Flip Card): Rotación en el eje Y (rotateY(180deg)) al hacer clic en la tarjeta para alternar entre el frente y el reverso.
 
 --Navegación interna: Mini-menú interactivo en el reverso con iconos SVG que cambian de estado y color al pasar el cursor.
 
 ## Uso de inteligencia artificial
-* **Herramienta:** 
-Gemini de Google
-* **Uso:** 
-Asistencia técnica en la depuración de CSS, integración e interacción de JavaScript (dados), y generación de los avatares 
-* **Criterio:** 
--- Optimización de código: Se utilizó como asistencia para correccion parcial del código, mejorando legibilidad y coherencia técnica. 
--- Generación de avatares: Se empleó mediante un prompt unificado aplicado a fotografías de referencia, logrando un estilo gráfico homogéneo y consistente para las imágenes de los integrantes.
+
+Todas las herramientas mencionadas a continuación se utilizaron con **plan gratuito**.
+
+### Gemini (Google)
+* **Uso:** Asistencia técnica en la depuración de CSS, integración e interacción de JavaScript (lógica de dados).
+* **Criterio:** Se utilizó como asistencia para corrección parcial del código, mejorando legibilidad y coherencia técnica. El equipo revisó y probó cada cambio antes de incorporarlo.
+
+### ChatGPT (OpenAI)
+* **Uso:** Generación de los avatares de los integrantes.
+* **Criterio:** Se empleó mediante un prompt unificado aplicado a fotografías de referencia, logrando un estilo gráfico homogéneo y consistente para las imágenes de los cuatro integrantes.
+
+### Claude (Anthropic)
+* **Uso:** Asistencia como mentor técnico durante el desarrollo: apoyo conceptual sobre HTML, CSS y JavaScript, y redacción de la documentación de este README.
+* **Criterio:** Se utilizó como guía de aprendizaje y de organización de la documentación y mentor para el análisis de código y depuración.
 
 ## Despliegue
-* **URL de Vercel:** [Añadir link aquí cuando se publique]
+* **URL de Vercel:** _Pendiente de publicación._ Se actualizará este campo con el enlace correspondiente antes de la entrega final.
