@@ -62,26 +62,27 @@
                 <p style="color: #777; font-size: 0.9rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">Manual de Reglas y Procesos</p>
             </header>
     
-            <!-- Bloque 1: Procesos -->
+            <!-- Bloque 1: Planificación y concepto -->
             <section class="entrada-bitacora">
                 <div class="caja-titulo acento-verde">
                     <div class="titulo-con-icono">
-                        <img src="img/ferrocarril.png" alt="Procesos" class="icono-bitacora">
-                        <h2>Procesos y decisiones</h2>
+                        <img src="img/dados.png" alt="Planificación" class="icono-bitacora">
+                        <h2>Planificación y concepto</h2>
                     </div>
                     <button class="btn-expandir">▼</button>
                 </div>
                 
                 <div class="entrada-contenido">
-                    <p>El equipo adoptó la temática del juego de mesa Monopoly como eje conceptual principal del proyecto web. Esta estructura proporciona coherencia visual y conceptual a través de toda la experiencia del usuario. Se desarrolló una propuesta documentada que detallaba la estructura completa: tablero como portada, fichas como enlaces a perfiles, y tarjetas de propiedad como presentación de datos.</p>
+                    <p>Antes de escribir código, el equipo definió una estructura de carpetas y un documento inicial con la propuesta de diseño. Se evaluó la temática a utilizar comparando con proyectos de otros grupos, y se optó por adoptar el juego de mesa Monopoly como eje conceptual para diferenciar el proyecto y darle coherencia visual a todas las secciones (portada, perfiles y bitácora).</p>
+                    <p>Se acordó como estrategia de trabajo armar primero la estructura general del sitio (HTML y disposición general) y recién después avanzar sobre el detalle de colores, imágenes y contenido personalizado de cada integrante. Esto permitió que el equipo avanzara en paralelo sin bloquearse entre sí.</p>
                 </div>
             </section>
-    
+
             <!-- Bloque 2: GitHub -->
             <section class="entrada-bitacora">
                 <div class="caja-titulo acento-naranja">
                     <div class="titulo-con-icono">
-                        <img src="img/impuestos.png" alt="GitHub" class="icono-bitacora">
+                        <img src="img/ferrocarril.png" alt="GitHub" class="icono-bitacora">
                         <h2>Uso de GitHub</h2>
                     </div>
                     <button class="btn-expandir">▼</button>
@@ -89,14 +90,47 @@
                 
                 <div class="entrada-contenido">
                     <ol class="lista-pasos">
-                        <li>Organización en Git: ramas de trabajo independientes.</li>
-                        <li>Merge de ramas: consolidación del trabajo colaborativo en main.</li>
+                        <li>Organización en Git: ramas de trabajo independientes por integrante, para poder avanzar en paralelo sin interferir en el código de los demás.</li>
+                        <li>Ajuste de la lógica para mostrar el avatar correspondiente a cada perfil: se centralizó en el script un diccionario que asocia cada ícono con su avatar (y su inverso, para poder ocultarlo nuevamente), evitando así repetir código por cada integrante.</li>
+                        <li>Merge de ramas: consolidación del trabajo colaborativo en main. Durante este proceso se perdieron temporalmente los estilos responsive ya desarrollados, por lo que hubo que revisarlos y volver a integrarlos.</li>
                         <li>Resolución de conflictos de estilos CSS en los media queries.</li>
                     </ol>
                 </div>
             </section>
-    
-            <!-- Bloque 3: IA -->
+
+            <!-- Bloque 3: Diseño responsive -->
+            <section class="entrada-bitacora">
+                <div class="caja-titulo acento-azul">
+                    <div class="titulo-con-icono">
+                        <img src="img/agua.png" alt="Diseño responsive" class="icono-bitacora">
+                        <h2>Diseño responsive</h2>
+                    </div>
+                    <button class="btn-expandir">▼</button>
+                </div>
+                
+                <div class="entrada-contenido">
+                    <p>Se trabajó la adaptación del sitio a los breakpoints obligatorios de 400px, 900px y 1200px, cuidando que el tablero, las tarjetas de perfil y el menú de navegación no generen desbordes ni superposición de contenido.</p>
+                    <p>Durante la integración de ramas, los estilos responsive se perdieron momentáneamente y debieron reconstruirse. Además, se detectaron inconsistencias visuales al probar el sitio en distintos dispositivos entre integrantes del equipo, lo que llevó a revisar nuevamente los ajustes en conjunto antes de la entrega.</p>
+                </div>
+            </section>
+
+            <!-- Bloque 4: Navegación y enlaces -->
+            <section class="entrada-bitacora">
+                <div class="caja-titulo acento-verde">
+                    <div class="titulo-con-icono">
+                        <img src="img/salida.png" alt="Navegación y enlaces" class="icono-bitacora">
+                        <h2>Navegación y enlaces</h2>
+                    </div>
+                    <button class="btn-expandir">▼</button>
+                </div>
+                
+                <div class="entrada-contenido">
+                    <p>Se revisó exhaustivamente que la navegación funcionara correctamente en todas las secciones del sitio. En esta revisión se detectó que el modal de contacto solo estaba presente en el perfil de uno de los integrantes, por lo que no funcionaba en los perfiles restantes. Se corrigió incorporando el modal en las páginas de perfil que no lo tenían.</p>
+                    <p>También se identificó que el botón de contacto ubicado dentro de la tarjeta de cada perfil no dirigía a ningún lado, ya que el enlace no coincidía con el identificador utilizado por el script. Se corrigió apuntando al identificador correcto, ya definido previamente para la casilla de contacto del tablero.</p>
+                </div>
+            </section>
+
+            <!-- Bloque 5: IA -->
             <section class="entrada-bitacora">
                 <div class="caja-titulo acento-azul"> 
                     <div class="titulo-con-icono">
@@ -111,7 +145,7 @@
                         <span class="numero-paso">1.</span>
                         <div class="detalle-paso">
                             <h3>Avatares</h3>
-                            <p>Se utilizaron herramientas de IA generativa para crear los avatares estilo 3D de cada integrante, manteniendo una paleta de colores y una iluminación consistente para todos.</p>
+                            <p>Se utilizaron herramientas de IA generativa para crear los avatares estilo 3D de cada integrante, manteniendo una paleta de colores y una iluminación consistente para todos. Para lograr esa coherencia visual entre los cuatro avatares, se acordó utilizar un mismo prompt de base aplicado a la fotografía de referencia de cada integrante.</p>
                         </div>
                     </div>
     
@@ -126,11 +160,9 @@
                                     <span class="badge-opcion">A</span>
                                     <h4>CSS Responsivo</h4>
                                 </div>
-                                <p>Optimización de la resolución para los desbordes de las tarjetas giratorias para los breakpoints de 400px, 600px y 1200px logrando así encontrar una solución funcional sin la necesidades de recurrir al ‘!important’.</p>
+                                <p>Optimización de la resolución para los desbordes de las tarjetas giratorias para los breakpoints de 400px, 600px y 1200px logrando así encontrar una solución funcional sin la necesidades de recurrir a la regla ‘!important’.</p>
                             </div>
-                            
-                            <span class="separador-yo">----</span>
-                            
+                                                        
                             <div class="opcion-carta">
                                 <div class="encabezado-opcion">
                                     <span class="badge-opcion">B</span>
