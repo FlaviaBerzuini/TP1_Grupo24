@@ -124,7 +124,7 @@ Todas las herramientas mencionadas a continuación se utilizaron con **plan grat
 * **Criterio:** Se utilizó como guía de aprendizaje y de organización de la documentación y mentor para el análisis de código y depuración.
 
 ## Despliegue
-* **URL de Vercel:** _Pendiente de publicación._ Se actualizará este campo con el enlace correspondiente antes de la entrega final.
+* **URL de Vercel:** [https://tp1-frontend-grupo24.vercel.app](https://tp1-frontend-grupo24.vercel.app)
 
 ## Evolución
 
