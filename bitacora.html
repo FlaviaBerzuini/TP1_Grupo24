@@ -64,7 +64,7 @@
     
             <!-- Bloque 1: Planificación y concepto -->
             <section class="entrada-bitacora">
-                <div class="caja-titulo acento-verde">
+                <div class="caja-titulo acento-rojo">
                     <div class="titulo-con-icono">
                         <img src="img/dados.png" alt="Planificación" class="icono-bitacora">
                         <h2>Planificación y concepto</h2>
@@ -85,22 +85,47 @@
                         <img src="img/ferrocarril.png" alt="GitHub" class="icono-bitacora">
                         <h2>Uso de GitHub</h2>
                     </div>
-                    <button class="btn-expandir">▼</button>
+                    <button class="btn-expandir" aria-expanded="false" aria-label="Desplegar contenido">▼</button>
                 </div>
                 
                 <div class="entrada-contenido">
-                    <ol class="lista-pasos">
-                        <li>Organización en Git: ramas de trabajo independientes por integrante, para poder avanzar en paralelo sin interferir en el código de los demás.</li>
-                        <li>Ajuste de la lógica para mostrar el avatar correspondiente a cada perfil: se centralizó en el script un diccionario que asocia cada ícono con su avatar (y su inverso, para poder ocultarlo nuevamente), evitando así repetir código por cada integrante.</li>
-                        <li>Merge de ramas: consolidación del trabajo colaborativo en main. Durante este proceso se perdieron temporalmente los estilos responsive ya desarrollados, por lo que hubo que revisarlos y volver a integrarlos.</li>
-                        <li>Resolución de conflictos de estilos CSS en los media queries.</li>
-                    </ol>
+                    <div class="paso-turno">
+                        <span class="numero-paso numero-naranja">1.</span>
+                        <div class="detalle-paso">
+                            <h3>Organización en Git</h3>
+                            <p>Ramas de trabajo independientes por integrante, para poder avanzar en paralelo sin interferir en el código de los demás.</p>
+                        </div>
+                    </div>
+            
+                    <div class="paso-turno">
+                        <span class="numero-paso numero-naranja">2.</span>
+                        <div class="detalle-paso">
+                            <h3>Lógica de avatares</h3>
+                            <p>Se centralizó en el script un diccionario que asocia cada ícono con su avatar (y su inverso, para poder ocultarlo nuevamente), evitando así repetir código por cada integrante.</p>
+                        </div>
+                    </div>
+            
+                    <div class="paso-turno">
+                        <span class="numero-paso numero-naranja">3.</span>
+                        <div class="detalle-paso">
+                            <h3>Merge de ramas</h3>
+                            <p>Consolidación del trabajo colaborativo en main. Durante este proceso se perdieron temporalmente los estilos responsive ya desarrollados, por lo que hubo que revisarlos y volver a integrarlos.</p>
+                        </div>
+                    </div>
+            
+                    <div class="paso-turno">
+                        <span class="numero-paso numero-naranja">4.</span>
+                        <div class="detalle-paso">
+                            <h3>Conflictos de estilos</h3>
+                            <p>Resolución de conflictos de estilos CSS en los media queries.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Bloque 3: Diseño responsive -->
             <section class="entrada-bitacora">
-                <div class="caja-titulo acento-azul">
+                <div class="caja-titulo acento-verde">
                     <div class="titulo-con-icono">
                         <img src="img/agua.png" alt="Diseño responsive" class="icono-bitacora">
                         <h2>Diseño responsive</h2>
@@ -109,14 +134,14 @@
                 </div>
                 
                 <div class="entrada-contenido">
-                    <p>Se trabajó la adaptación del sitio a los breakpoints obligatorios de 400px, 900px y 1200px, cuidando que el tablero, las tarjetas de perfil y el menú de navegación no generen desbordes ni superposición de contenido.</p>
-                    <p>Durante la integración de ramas, los estilos responsive se perdieron momentáneamente y debieron reconstruirse. Además, se detectaron inconsistencias visuales al probar el sitio en distintos dispositivos entre integrantes del equipo, lo que llevó a revisar nuevamente los ajustes en conjunto antes de la entrega.</p>
+                    <p>Para garantizar la correcta adaptación del sitio a los distintos breakpoints asignados, fue necesario revisar y ajustar reiteradamente los estilos responsive, especialmente luego de detectar inconsistencias visuales y desbordes de contenido en diferentes dispositivos.</p>
+
                 </div>
             </section>
 
             <!-- Bloque 4: Navegación y enlaces -->
             <section class="entrada-bitacora">
-                <div class="caja-titulo acento-verde">
+                <div class="caja-titulo acento-rosa">
                     <div class="titulo-con-icono">
                         <img src="img/salida.png" alt="Navegación y enlaces" class="icono-bitacora">
                         <h2>Navegación y enlaces</h2>
@@ -125,8 +150,7 @@
                 </div>
                 
                 <div class="entrada-contenido">
-                    <p>Se revisó exhaustivamente que la navegación funcionara correctamente en todas las secciones del sitio. En esta revisión se detectó que el modal de contacto solo estaba presente en el perfil de uno de los integrantes, por lo que no funcionaba en los perfiles restantes. Se corrigió incorporando el modal en las páginas de perfil que no lo tenían.</p>
-                    <p>También se identificó que el botón de contacto ubicado dentro de la tarjeta de cada perfil no dirigía a ningún lado, ya que el enlace no coincidía con el identificador utilizado por el script. Se corrigió apuntando al identificador correcto, ya definido previamente para la casilla de contacto del tablero.</p>
+                    <p>Una de las dificultades encontradas durante el desarrollo fue garantizar el correcto funcionamiento de la navegación. Por este motivo, fue necesario revisar exhaustivamente, y en reiteradas ocasiones, la estructura de las páginas y la interacción entre los elementos HTML y el código JavaScript, con el objetivo de detectar y corregir las posibles inconsistencias en los enlaces y elementos de contacto.</p>
                 </div>
             </section>
 
