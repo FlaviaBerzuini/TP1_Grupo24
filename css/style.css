@@ -276,7 +276,7 @@ body {
     border-left: 1px solid #333;
 }
 
-/* 5. Colores */
+/* 6. Colores */
 
 /* Fondos para las cabeceras y casillas del tablero */
 .color-marron { background-color: #8b4513; color: white; }
@@ -340,7 +340,7 @@ body {
 .fila6-col4 { grid-area: 6 / 4 / 7 / 5; }
 .fila6-col5 { grid-area: 6 / 5 / 7 / 6; }
 
-/* 6. Centro del Tablero */
+/* 7. Centro del Tablero */
 
 .centro-tablero {
     grid-column: 2 / 6;
@@ -496,7 +496,7 @@ body {
     font-size: 0.7rem; 
 }
 
-/* 7. Contacto / Declaración */
+/* 8. Contacto / Declaración */
 
 .modal-overlay {
     display: none;
@@ -603,9 +603,10 @@ body {
     transform: scale(1.02);
 }
 
-/* 8. Perfiles (Tarjetas) */
+/* 9. Perfiles (Tarjetas) */
 
 /* Colores*/
+
 /* Bordes de los avatares */
 .imagen-avatar.borde-verde { border-color: #2ecc71; }
 .imagen-avatar.borde-naranja { border-color: #f39c12; }
@@ -892,7 +893,7 @@ padding: 15px;
 .marco-violeta .link-nav:hover { color: #9b59b6; }
 .marco-azul-oscuro .link-nav:hover { color: #1e3799; }
 
-/* 9. Animación dados */
+/* 10. Animación dados */
 .animar-dados {
     animation: agitar 0.5s ease-in-out;
 }
@@ -905,7 +906,7 @@ padding: 15px;
     100% { transform: rotate(0deg) scale(1); }
 }
 
-/* 10. Efecto para la casilla seleccionada */
+/* 11. Efecto para la casilla seleccionada */
 .casilla-seleccionada {
     box-shadow: 0 0 20px 5px #f59e0b !important;
     transform: scale(1.08) !important;
@@ -914,7 +915,37 @@ padding: 15px;
     transition: all 0.3s ease;
 }
 
-/* 11. Bitácora */
+/* 12. Bitácora */
+
+.tarjeta-tablero {
+    background-color: #d6e8df;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 850px;
+    margin: 40px auto;
+    width: 90%;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.cabecera-logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-bitacora {
+    max-width: 250px; 
+    height: auto;
+}
+
+.cabecera-logo h1 {
+    color: #444444;
+    font-size: 1.6rem;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* Contenedores generales */
 .contenedor-bitacora {
     padding: 40px 20px;
     max-width: 1000px;
@@ -939,138 +970,151 @@ padding: 15px;
     line-height: 1.6;
 }
 
-.seccion-bitacora {
-    margin-bottom: 50px;
-}
-
-.titulo-seccion {
-    color: #27ae60;
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
+/* Estructura de las cajas */
 .entrada-bitacora {
-    background-color: #2c3e50;
-    border: 1px solid #455a64;
-    border-radius: 8px;
+    background-color: #ffffff;
+    border-radius: 10px; 
     margin-bottom: 15px;
     overflow: hidden;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
 
-.entrada-encabezado {
+.caja-titulo {
+    background-color: #ffffff; 
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.caja-titulo:hover {
+    background-color: #f5f5f5; 
+}
+
+.titulo-con-icono {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
-    background-color: #1a252f;
-    border-bottom: 1px solid #333;
+    gap: 15px;
 }
 
-.entrada-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    min-width: 100px;
+.icono-bitacora {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
 }
 
-.fecha-entrada {
-    color: #f59e0b;
-    font-weight: bold;
-    font-size: 0.85rem;
-}
-
-.tipo-entrada {
-    background-color: #333;
-    color: #fff;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    text-align: center;
-}
-
-.entrada-titulo {
-    flex-grow: 1;
-    margin: 0 20px;
-    font-size: 1.1rem;
-    color: #ecf0f1;
+.caja-titulo h2 {
+    font-size: 1.15rem;
+    color: #333333; 
+    margin: 0;
+    font-weight: 700;
 }
 
 .btn-expandir {
     background: none;
     border: none;
-    color: #f59e0b;
     font-size: 1.2rem;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-/* Estado contraído por defecto */
-.entrada-contenido {
-    display: none;
-    padding: 25px;
-    background-color: #2c3e50;
+.entrada-bitacora.expandida .btn-expandir {
+    transform: rotate(180deg);
 }
 
-/* Estado expandido */
+/* Acentos unificados con el tablero */
+.acento-rojo { border-left: 6px solid #e74c3c; }
+.acento-celeste { border-left: 6px solid #aae0fa; }
+.acento-morado { border-left: 6px solid #9b59b6; }
+.acento-verde { border-left: 6px solid #2ecc71; }
+.acento-azul-oscuro { border-left: 6px solid #1e3799; }
+.acento-amarillo { border-left: 6px solid #f1c40f; }
+
+.acento-rojo .btn-expandir { color: #e74c3c; }
+.acento-celeste .btn-expandir { color: #aae0fa; }
+.acento-morado .btn-expandir { color: #9b59b6; }
+.acento-verde .btn-expandir { color: #2ecc71; }
+.acento-azul-oscuro .btn-expandir { color: #1e3799; }
+.acento-amarillo .btn-expandir { color: #f1c40f; }
+
+/* Contenido desplegable */
+.entrada-contenido {
+    display: none; 
+    padding: 20px 25px;
+    background-color: #ffffff;
+    color: #333333; 
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
 .entrada-bitacora.expandida .entrada-contenido {
     display: block;
+    animation: fadeIn 0.3s ease;
 }
 
-.entrada-bloque {
-    margin-bottom: 20px;
-}
-
-.entrada-bloque:last-child {
-    margin-bottom: 0;
-}
-
-.entrada-bloque h4 {
-    color: #aae0fa;
-    margin-bottom: 8px;
-    font-size: 1.1rem;
-}
-
-.entrada-bloque p, .entrada-bloque ul {
-    color: #d5d8dc;
-    line-height: 1.6;
-    font-size: 1.05rem;
-}
-
-.entrada-bloque ul {
-    padding-left: 20px;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .entrada-contenido p {
     text-align: justify;
-    margin-bottom: 15px; /* Genera el espacio exacto entre los párrafos */
-    line-height: 1.6;    /* Mejora la legibilidad separando un poco los renglones */
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
-/* Previene que el último párrafo sume un margen innecesario al final de la caja */
 .entrada-contenido p:last-child {
     margin-bottom: 0; 
+}
+
+/* Pasos y listas numeradas */
+.paso-turno { 
+    display: flex; 
+    margin-top: 15px; 
+}
+
+.numero-paso {
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin-right: 15px;
+    line-height: 1;
+}
+
+/* Colores para los números de los pasos */
+.numero-paso.numero-rojo { color: #e74c3c; }
+.numero-paso.numero-celeste { color: #aae0fa; }
+.numero-paso.numero-morado { color: #9b59b6; }
+.numero-paso.numero-verde { color: #2ecc71; }
+.numero-paso.numero-azul-oscuro { color: #1e3799; }
+.numero-paso.numero-amarillo { color: #f1c40f; }
+
+.detalle-paso h3 { 
+    color: #444444; 
+    font-size: 1.05rem; 
+    margin-bottom: 5px; 
+    font-weight: 700;
 }
 
 .detalle-paso p {
     text-align: justify;
     line-height: 1.6;
-    margin-bottom: 10px; /* Separación estándar */
+    margin-bottom: 10px;
 }
 
+/* Cajas grises de opciones (A y B) */
 .opcion-carta {
-    background-color: #f8f9fa; /* Mantené tu gris actual si es distinto */
-    padding: 15px 20px; /* ACÁ ESTÁ LA CLAVE: 15px arriba/abajo, 20px a los lados */
+    background-color: #f8f9fa;
+    padding: 15px 20px;
     border-radius: 8px;
-    margin-top: 15px; /* Lo separa del texto que tiene arriba */
-    border: 1px solid #e2e8f0; /* Opcional: un bordecito sutil para definir la caja */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #e0e0e0;
 }
 
-/* Previene que el texto dentro de la caja gris genere un hueco extra abajo */
 .opcion-carta p:last-child {
     margin-bottom: 0;
 }
@@ -1079,34 +1123,66 @@ padding: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10px; /* Empuja el texto descriptivo un poco hacia abajo */
+    margin-bottom: 10px;
 }
 
-/* 12. Footer */
+.badge-opcion {
+    background-color: #f1c40f;
+    color: #111;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.opcion-carta h4 { 
+    color: #555555; 
+    margin: 0; 
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+/* 13. Footer */
+/* =========================================
+   13. FOOTER (VERSIÓN HORIZONTAL APP)
+   ========================================= */
 
 .pie-pagina {
     background-color: #0b1118; 
-    border-top: 1px solid rgba(216, 0, 0, 0.4); 
-    padding: 15px 20px; 
+    border-top: 1px solid rgba(216, 0, 0, 0.4); /* Línea roja superior que pidieron */
+    padding: 15px 30px; 
     margin-top: auto; 
     width: 100%;
 }
 
 .footer-contenido-centrado {
-    max-width: 900px;
+    max-width: 1200px; /* Ensanchado para aprovechar la disposición horizontal */
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center;
-    gap: 6px;
+    flex-direction: row; /* Alineación horizontal mágica */
+    justify-content: space-between; 
+    align-items: center;
 }
 
+/* Flex = 1 garantiza que las cajas laterales midan lo mismo, manteniendo el texto perfectamente al centro */
+.footer-bloque {
+    flex: 1;
+    display: flex;
+}
+
+.logo-container { justify-content: flex-start; }
+.texto-container { flex-direction: column; align-items: center; text-align: center; }
+.git-container { justify-content: flex-end; }
+
 .logo-footer {
-    height: 35px;
+    height: 28px;
     object-fit: contain;
-    opacity: 0.9;
-    margin-bottom: 4px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.logo-footer:hover {
+    opacity: 1;
 }
 
 .pie-pagina p {
@@ -1114,36 +1190,55 @@ padding: 15px;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.75rem;
     margin: 0;
+    line-height: 1.4;
     letter-spacing: 0.5px;
 }
 
 .footer-subtitulo {
     color: #57606f !important; 
     font-size: 0.65rem !important;
+    margin-top: 2px;
 }
 
 .footer-links {
-    margin-top: 4px; 
+    margin: 0; 
 }
 
+/* Estilo para darle presencia al ícono de GitHub */
 .footer-links a {
     color: #57606f; 
     transition: all 0.3s ease;
     display: flex;
+    align-items: center;
     justify-content: center;
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo circular sutil */
+    padding: 8px;
+    border-radius: 50%;
 }
 
 .footer-links a:hover {
-    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
 }
 
 .icono-footer {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
+    filter: brightness(0.8);
 }
 
-/* Menú hamburgesa */
+/* Para que en celulares vuelva a apilarse todo al centro automáticamente */
+@media screen and (max-width: 768px) {
+    .footer-contenido-centrado {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .footer-bloque {
+        justify-content: center;
+    }
+}
+
+/* 14. Menú hamburgesa */
 .menu-toggle { display: none; }
 .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
 .hamburger .bar { 
@@ -1159,7 +1254,7 @@ padding: 15px;
 .menu-toggle:checked + .hamburger .bar:nth-child(2) { opacity: 0; }
 .menu-toggle:checked + .hamburger .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: #d80000; }
 
-/* Parte del responsive */
+/* 15. Parte del responsive */
 
 /* <= 1200px */
 @media screen and (max-width: 1200px) {
@@ -1299,11 +1394,11 @@ padding: 15px;
         z-index: 100;
     }
 .nav-links a {
-        width: auto; /* Evita que el enlace ocupe el 100% del ancho */
-        border-bottom: none; /* Elimina la línea roja gigante */
+        width: auto;
+        border-bottom: none;
         padding: 10px 20px;
         text-align: center;
-        border-radius: 8px; /* Un bordecito suave */
+        border-radius: 8px;
     }
     .nav-links a:hover, .nav-links a:active {
         background-color: rgba(255, 255, 255, 0.1);
@@ -1396,200 +1491,3 @@ padding: 15px;
     .tarjeta-cara.tarjeta-dorso img { width: 60px; } 
     .lista-gustos li { font-size: 0.75rem; }
 }
-
-/* Bitácora */
-
-body {
-    background-color: #1a252f; 
-}
-
-.tarjeta-tablero {
-    background-color: #d6e8df;
-    border-radius: 15px;
-    padding: 40px;
-    max-width: 850px;
-    margin: 40px auto;
-    width: 90%;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-}
-
-.cabecera-logo {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.logo-bitacora {
-    max-width: 250px; 
-    height: auto;
-}
-
-.cabecera-logo h1 {
-    color: #444444;
-    font-size: 1.6rem;
-    margin-top: 15px;
-    letter-spacing: 1px;
-    font-weight: 700;
-}
-
-.entrada-bitacora {
-    background-color: #ffffff;
-    border-radius: 10px; 
-    margin-bottom: 15px;
-    overflow: hidden;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-}
-
-.caja-titulo {
-    background-color: #ffffff; 
-    padding: 14px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.caja-titulo:hover {
-    background-color: #f5f5f5; 
-}
-
-
-.titulo-con-icono {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.icono-bitacora {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-}
-
-.caja-titulo h2 {
-    font-size: 1.15rem;
-    color: #333333; 
-    margin: 0;
-    font-weight: 700;
-}
-
-.btn-expandir {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-
-/* Acentos para la bitácora unificados con los colores del tablero */
-.acento-rojo { border-left: 6px solid #e74c3c; }
-.acento-celeste { border-left: 6px solid #aae0fa; }
-.acento-morado { border-left: 6px solid #9b59b6; }
-.acento-verde { border-left: 6px solid #2ecc71; } /* Actualizado al verde del tablero */
-.acento-azul-oscuro { border-left: 6px solid #1e3799; }
-.acento-amarillo { border-left: 6px solid #f1c40f; }
-
-/* Colores para los botones de expandir */
-.acento-rojo .btn-expandir { color: #e74c3c; }
-.acento-celeste .btn-expandir { color: #aae0fa; }
-.acento-morado .btn-expandir { color: #9b59b6; }
-.acento-verde .btn-expandir { color: #2ecc71; }
-.acento-azul-oscuro .btn-expandir { color: #1e3799; }
-.acento-amarillo .btn-expandir { color: #f1c40f; }
-
-/* Colores para los números de los pasos (con especificidad alta para que no fallen) */
-.numero-paso.numero-rojo { color: #e74c3c; }
-.numero-paso.numero-celeste { color: #aae0fa; }
-.numero-paso.numero-morado { color: #9b59b6; }
-.numero-paso.numero-verde { color: #2ecc71; }
-.numero-paso.numero-azul-oscuro { color: #1e3799; }
-.numero-paso.numero-amarillo { color: #f1c40f; }
-
-.entrada-bitacora.expandida .btn-expandir {
-    transform: rotate(180deg);
-}
-
-.entrada-contenido {
-    display: none; 
-    padding: 20px 25px;
-    background-color: #ffffff;
-    color: #333333; 
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
-.entrada-bitacora.expandida .entrada-contenido {
-    display: block;
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.paso-turno { display: flex; margin-top: 15px; }
-.numero-paso { 
-    font-size: 1.6rem; 
-    font-weight: 900; 
-    margin-right: 15px; 
-    color: #00a2e8;
-}
-.detalle-paso h3 { 
-    color: #444444; 
-    font-size: 1.05rem; 
-    margin-bottom: 5px; 
-    font-weight: 700;
-}
-
-.encabezado-opcion {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.badge-opcion {
-    background-color: #00a2e8;
-    color: #ffffff;
-    border-radius: 50%;
-    padding: 2px 8px;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-.opcion-carta {
-    margin-top: 15px; 
-    margin-bottom: 15px;
-    background-color: #fafafa;
-    border-radius: 8px;
-    border-left: 3px solid #e0e0e0;
-}
-
-.opcion-carta h4 { 
-    color: #555555; 
-    margin: 0; 
-    font-size: 0.95rem;
-    font-weight: 700;
-} 
-.separador-yo { 
-    color: #888888; 
-    font-weight: 700; 
-    margin: 10px 0; 
-    display: block; 
-}
-
-.numero-paso {
-    font-size: 1.8rem;
-    font-weight: 900;
-    line-height: 1;
-    margin-right: 0.8rem;
-    color: #2196F3; 
-}
-
-.numero-paso.numero-naranja {
-    color: #FF9800; 
-}
-
