@@ -80,7 +80,7 @@
 
             <!-- Bloque 2: GitHub -->
             <section class="entrada-bitacora">
-                <div class="caja-titulo acento-naranja">
+                <div class="caja-titulo acento-celeste">
                     <div class="titulo-con-icono">
                         <img src="img/ferrocarril.png" alt="GitHub" class="icono-bitacora">
                         <h2>Uso de GitHub</h2>
@@ -90,34 +90,47 @@
                 
                 <div class="entrada-contenido">
                     <div class="paso-turno">
-                        <span class="numero-paso numero-naranja">1.</span>
+                        <span class="numero-paso numero-celeste">1.</span>
                         <div class="detalle-paso">
                             <h3>Organización en Git</h3>
                             <p>Ramas de trabajo independientes por integrante, para poder avanzar en paralelo sin interferir en el código de los demás.</p>
                         </div>
                     </div>
-            
+
                     <div class="paso-turno">
-                        <span class="numero-paso numero-naranja">2.</span>
-                        <div class="detalle-paso">
-                            <h3>Lógica de avatares</h3>
-                            <p>Se centralizó en el script un diccionario que asocia cada ícono con su avatar (y su inverso, para poder ocultarlo nuevamente), evitando así repetir código por cada integrante.</p>
-                        </div>
-                    </div>
-            
-                    <div class="paso-turno">
-                        <span class="numero-paso numero-naranja">3.</span>
+                        <span class="numero-paso numero-celeste">2.</span>
                         <div class="detalle-paso">
                             <h3>Merge de ramas</h3>
                             <p>Consolidación del trabajo colaborativo en main. Durante este proceso se perdieron temporalmente los estilos responsive ya desarrollados, por lo que hubo que revisarlos y volver a integrarlos.</p>
                         </div>
                     </div>
-            
+
                     <div class="paso-turno">
-                        <span class="numero-paso numero-naranja">4.</span>
+                        <span class="numero-paso numero-celeste">3.</span>
                         <div class="detalle-paso">
                             <h3>Conflictos de estilos</h3>
                             <p>Resolución de conflictos de estilos CSS en los media queries.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bloque 2.5: Lógica de desarrollo -->
+            <section class="entrada-bitacora">
+                <div class="caja-titulo acento-morado">
+                    <div class="titulo-con-icono">
+                        <img src="img/arca.png" alt="Lógica de desarrollo" class="icono-bitacora">
+                        <h2>Lógica de desarrollo</h2>
+                    </div>
+                    <button class="btn-expandir">▼</button>
+                </div>
+                
+                <div class="entrada-contenido">
+                    <div class="paso-turno">
+                        <span class="numero-paso numero-morado">1.</span>
+                        <div class="detalle-paso">
+                            <h3>Lógica de avatares</h3>
+                            <p>Se centralizó en el script un diccionario que asocia cada ícono con su avatar (y su inverso, para poder ocultarlo nuevamente), evitando así repetir código por cada integrante.</p>
                         </div>
                     </div>
                 </div>
@@ -135,13 +148,12 @@
                 
                 <div class="entrada-contenido">
                     <p>Para garantizar la correcta adaptación del sitio a los distintos breakpoints asignados, fue necesario revisar y ajustar reiteradamente los estilos responsive, especialmente luego de detectar inconsistencias visuales y desbordes de contenido en diferentes dispositivos.</p>
-
                 </div>
             </section>
 
             <!-- Bloque 4: Navegación y enlaces -->
             <section class="entrada-bitacora">
-                <div class="caja-titulo acento-rosa">
+                <div class="caja-titulo acento-azul-oscuro">
                     <div class="titulo-con-icono">
                         <img src="img/salida.png" alt="Navegación y enlaces" class="icono-bitacora">
                         <h2>Navegación y enlaces</h2>
@@ -150,13 +162,14 @@
                 </div>
                 
                 <div class="entrada-contenido">
-                    <p>Una de las dificultades encontradas durante el desarrollo fue garantizar el correcto funcionamiento de la navegación. Por este motivo, fue necesario revisar exhaustivamente, y en reiteradas ocasiones, la estructura de las páginas y la interacción entre los elementos HTML y el código JavaScript, con el objetivo de detectar y corregir las posibles inconsistencias en los enlaces y elementos de contacto.</p>
+                    <p>Durante el desarrollo se detectó que el ícono de contacto en las tarjetas de perfil no estaba correctamente vinculado, por lo que al hacer clic no redirigía a la sección correspondiente. Se revisó y corrigió el enlace en cada una de las páginas individuales.</p>
+                    <p>También se identificó un problema de alineación en el menú hamburguesa, que quedaba desplazado hacia la izquierda al probar la vista responsive. Se ajustaron los estilos del menú para corregir su posición en los distintos breakpoints.</p>
                 </div>
             </section>
 
             <!-- Bloque 5: IA -->
             <section class="entrada-bitacora">
-                <div class="caja-titulo acento-azul"> 
+                <div class="caja-titulo acento-amarillo"> 
                     <div class="titulo-con-icono">
                         <img src="img/electricidad.png" alt="IA" class="icono-bitacora">
                         <h2>Uso de IA</h2>
@@ -165,34 +178,36 @@
                 </div>
                 
                 <div class="entrada-contenido">
+                    <p>El equipo incorporó IA como asistente técnico en dos frentes, siempre con revisión propia antes de aceptar cualquier resultado en el código o el diseño final.</p>
+
                     <div class="paso-turno">
-                        <span class="numero-paso">1.</span>
+                        <span class="numero-paso numero-amarillo">1.</span>
                         <div class="detalle-paso">
-                            <h3>Avatares</h3>
-                            <p>Se utilizaron herramientas de IA generativa para crear los avatares estilo 3D de cada integrante, manteniendo una paleta de colores y una iluminación consistente para todos. Para lograr esa coherencia visual entre los cuatro avatares, se acordó utilizar un mismo prompt de base aplicado a la fotografía de referencia de cada integrante.</p>
+                            <h3>Avatares (ChatGPT)</h3>
+                            <p>Se utilizó ChatGPT para crear los avatares estilo 3D de cada integrante, partiendo de la propia foto de referencia de cada uno. Se acordó un mismo prompt de base para lograr coherencia de paleta e iluminación entre los cuatro. Se descartaron versiones donde la IA alteraba demasiado los rasgos originales, priorizando fidelidad sobre estilo.</p>
                         </div>
                     </div>
-    
+
                     <div class="paso-turno">
-                        <span class="numero-paso">2.</span>
+                        <span class="numero-paso numero-amarillo">2.</span>
                         <div class="detalle-paso">
-                            <h3>Asistencia en código (Debugging)</h3> 
-                            <p>Se consultó a la IA como asistente técnico para:</p>
-                           
+                            <h3>Asistencia en código (Debugging) — Gemini y Claude</h3> 
+                            <p>Se consultó a Gemini y Claude como asistentes técnicos para:</p>
+                            
                             <div class="opcion-carta">
                                 <div class="encabezado-opcion">
                                     <span class="badge-opcion">A</span>
                                     <h4>CSS Responsivo</h4>
                                 </div>
-                                <p>Optimización de la resolución para los desbordes de las tarjetas giratorias para los breakpoints de 400px, 900px y 1200px logrando así encontrar una solución funcional sin la necesidades de recurrir a la regla ‘!important’.</p>
+                                <p>Optimización de los desbordes de las tarjetas giratorias en los breakpoints de 400px, 900px y 1200px. El equipo probó cada sugerencia en el navegador y optó por reescribir a mano las soluciones que dependían de <code>!important</code>, para mantener el CSS más limpio.</p>
                             </div>
-                                                        
+                                                                                    
                             <div class="opcion-carta">
                                 <div class="encabezado-opcion">
                                     <span class="badge-opcion">B</span>
                                     <h4>Interactividad JS</h4>
                                 </div>
-                                <p>Refinamiento de la lógica matemática para la suma de los dados y el recorrido automático de los peones por las casillas del tablero.</p>
+                                <p>Refinamiento de la lógica matemática para la suma de los dados y el recorrido automático de los peones por las casillas del tablero. Se ajustó manualmente la lógica sugerida para que el recorrido coincidiera con el orden real de casillas del tablero.</p>
                             </div>
                         </div>
                     </div>

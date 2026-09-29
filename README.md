@@ -4,21 +4,21 @@
 
 Este proyecto consiste en una aplicación web interactiva inspirada en el clásico juego de tablero **Monopoly**. Diseñada con una arquitectura basada en **HTML, CSS y JavaScript**, la plataforma combina una experiencia gráfica atractiva con funcionalidades dinámicas en tiempo real.
 
-El proyecto se divide en dos secciones principales:
+El proyecto se divide en cuatro secciones principales:
 
-1. **Tablero Principal (Portada):** Un tablero de juego funcional que integra mecánicas interactivas como la tirada aleatoria de dados con animaciones CSS, resaltado dinámico de casillas seleccionadas, visualización de fichas de jugadores y un panel de instrucciones desplegable.
+1. **Tablero principal (Portada):** Un tablero de juego funcional que integra mecánicas interactivas como la tirada aleatoria de dados con animaciones CSS, resaltado dinámico de casillas seleccionadas, visualización de fichas de jugadores y un panel de instrucciones desplegable.
 
-2. **Sección de Perfiles:** Una presentación temática de los integrantes del equipo estructurada mediante tarjetas de propiedad (*Flip Cards* 3D). Cada tarjeta permite alternar entre el frente y el reverso para revelar información detallada, avatares personalizados e interactividad mediante botones dinámicos.
+2. **Sección de perfiles:** Una presentación temática de los integrantes del equipo estructurada mediante tarjetas de propiedad (*Flip Cards* 3D). Cada tarjeta permite alternar entre el frente y el reverso para revelar información detallada, avatares personalizados e interactividad mediante botones dinámicos.
 
-3. **Formulario de Contacto:** Ubicado conceptualmente dentro de la casilla de la cárcel del tablero, este módulo despliega un formulario interactivo que sirve para un contacto directo. 
+3. **Formulario de contacto:** Ubicado conceptualmente dentro de la casilla de la cárcel del tablero, este módulo despliega un formulario interactivo que sirve para un contacto directo. 
 
-4. **Bitacora:** Panel que registra las decisiones tomadas a lo largo del proyecto con sus respectivas justificaciones y explicaciones. 
+4. **Bitácora:** Panel que registra las decisiones tomadas a lo largo del proyecto con sus respectivas justificaciones y explicaciones. 
 
 ## Integrantes
-* [Flavia Berzuini](https://github.com/FlaviaBerzuini)
-* [Ludmila Quiroz](https://github.com/Ludmimquiroz)
-* [Pedro Bustamante](https://github.com/peterbusta)
-* [Brian Sabio](https://github.com/BrianSabio)
+* [Berzuini, Flavia](https://github.com/FlaviaBerzuini)
+* [Bustamante, Pedro](https://github.com/peterbusta)
+* [Quiroz, Ludmila](https://github.com/Ludmimquiroz)
+* [Sabio, Brian](https://github.com/BrianSabio)
 
 ## Estructura del TP1
 ```text
@@ -39,36 +39,24 @@ TP1_Grupo24/
 ```
 
 ## Tecnologías y guía de estilos
-* **Lenguajes:** html5, css3, javascript.
+* **Lenguajes:** HTML5, CSS3, JavaScript.
 * **Tipografías:**
+    - Montserrat
+    - Roboto
 
---Montserrat.
+* **Paleta de colores:**
+    - #1a252f — Fondo general del body y del perfil.
+    - #2c3e50 — Gradiente del cuerpo, bloques de instrucciones y fondo secundario de la bitácora.
+    - #080b12 — Tono oscuro final del gradiente radial del cuerpo.
+    - #0b1118 — Fondo del menú superior y pie de página (footer).
+    - #e5e5d3 — Fondo base de la estructura del tablero.
+    - #d6e8df — Fondo verde claro del tablero, esquinas, tarjetas y el contenedor .tarjeta-tablero.
+    - #ffffff — Blanco (fondo de entradas de la bitácora, modal, tarjetas y elementos de navegación).
+    - #fafafa — Fondo gris muy claro para contenedores internos (.opcion-carta).
+    - #f4f1ea — Fondo crema para la tarjeta policial / modal.
+    - #fffde7 — Fondo crema/amarillento del mensaje de dados.
 
---Roboto.
-
-* **paleta de colores:**
-
--- #1a252f — Fondo general del body y del perfil.
-
--- #2c3e50 — Gradiente del cuerpo, bloques de instrucciones y fondo secundario de la bitácora.
-
---#080b12 — Tono oscuro final del gradiente radial del cuerpo.
-
---#0b1118 — Fondo del menú superior y pie de página (footer).
-
---#e5e5d3 — Fondo base de la estructura del tablero.
-
---#d6e8df — Fondo verde claro del tablero, esquinas, tarjetas y el contenedor .tarjeta-tablero.
-
---#ffffff — Blanco (fondo de entradas de la bitácora, modal, tarjetas y elementos de navegación).
-
---#fafafa — Fondo gris muy claro para contenedores internos (.opcion-carta).
-
---#f4f1ea — Fondo crema para la tarjeta policial / modal.
-
---#fffde7 — Fondo crema/amarillento del mensaje de dados.
-
-## Interactividad (javascript)
+## Interactividad (JavaScript)
 
 ### Portada
 
@@ -77,14 +65,10 @@ TP1_Grupo24/
 Es la página principal del proyecto. En esta interactúan el tablero con todos los demás elementos.
 
 **Funciones dinámicas agregadas:**
-
---Simulación de dados: Al presionar el botón de interacción, se genera un número aleatorio, los dados ejecutan una animación de agitación (@keyframes agitar) y se actualiza el mensaje central con el resultado obtenido.
-
---Selección de casilla: El resultado de los dados destaca dinámicamente la casilla correspondiente en el tablero mediante un efecto de brillo y escalado (.casilla-seleccionada).
-
---Interacción con fichas: Al pasar el cursor (hover) sobre las fichas/peones de los jugadores en el centro del tablero, se despliega una animación suave que revela el nombre de cada integrante.
-
---Menú responsive: Un menú desplegable (hamburguesa) que se adapta automáticamente a dispositivos móviles.
+    - Simulación de dados: Al presionar el botón de interacción, se genera un número aleatorio, los dados ejecutan una animación de agitación (@keyframes agitar) y se actualiza el mensaje central con el resultado obtenido.
+    - Selección de casilla: El resultado de los dados destaca dinámicamente la casilla correspondiente en el tablero mediante un efecto de brillo y escalado (.casilla-seleccionada).
+    - Interacción con fichas: Al pasar el cursor (hover) sobre las fichas/peones de los jugadores en el centro del tablero, se despliega una animación suave que revela el nombre de cada integrante.
+    - Menú responsive: Un menú desplegable (hamburguesa) que se adapta automáticamente a dispositivos móviles.
 
 ### Perfiles
 
@@ -92,17 +76,17 @@ Sección individual dedicada a presentar la información de cada integrante del 
 
 ![Frente de la tarjeta de perfil](img/tarjeta_perfil_1.png)
 
---Presentación clara y consistente: cada tarjeta muestra foto o avatar, nombre, ciudad, edad y habilidades con la estética de "rentas" de Monopoly.
+- Presentación clara y consistente: Cada tarjeta muestra foto o avatar, nombre, ciudad, edad y habilidades con la estética de "rentas" de Monopoly.
 
 ![Botón Revelar Jugador](img/tarjeta_perfil_2.png)
 
---Botón «Revelar Jugador»: Acción interactiva ubicada en la tarjeta que revela la imagen del avatar.
+- Botón «Revelar Jugador»: Acción interactiva ubicada en la tarjeta que revela la imagen del avatar.
 
 ![Reverso de la tarjeta con giro 3D](img/tarjeta_perfil_3.png)
 
---Giro 3D de la tarjeta (Flip Card): Rotación en el eje Y (rotateY(180deg)) al hacer clic en la tarjeta para alternar entre el frente y el reverso.
+- Giro 3D de la tarjeta (Flip Card): Rotación en el eje Y (rotateY(180deg)) al hacer clic en la tarjeta para alternar entre el frente y el reverso.
 
---Navegación interna: Mini-menú interactivo en el reverso con iconos SVG que cambian de estado y color al pasar el cursor.
+- Navegación interna: Mini-menú interactivo en el reverso con iconos SVG que cambian de estado y color al pasar el cursor.
 
 ## Uso de inteligencia artificial
 
@@ -128,7 +112,7 @@ Todas las herramientas mencionadas a continuación se utilizaron con **plan grat
 
 ## Evolución
 
-Este TP1 es la primera entrega de una serie de trabajos prácticos, por lo que quedan aspectos por definir y mejorar en las próximas instancias:
+Este TP1 es la primera entrega de las dos que definen el proyecto total, por lo que quedan aspectos por definir y mejorar en las próximas instancias:
 
 * **Modo oscuro:** se discutió la posibilidad de incorporar un tema oscuro alternativo, pero no llegó a implementarse en esta entrega.
 * El resto de las mejoras para próximas instancias todavía no fueron definidas como equipo.

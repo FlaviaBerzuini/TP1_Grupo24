@@ -361,7 +361,7 @@ body {
 /* Logo */
 .logo-central {
     width: 100%;
-    max-width: 240px;
+    max-width: 220px;
     object-fit: contain;
     margin-bottom: 5px;
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
@@ -369,8 +369,9 @@ body {
 
 /* Botón tirar dados */
 .dados-imagen {
-    width: 70px;
-    margin-bottom: 5px;
+    width: 80px;
+    margin-bottom: -15px;
+    margin-bottom: -2px;
     filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
     transition: transform 0.3s ease;
 }
@@ -378,9 +379,9 @@ body {
 .boton-jugar {
     background: linear-gradient(135deg, #f59e0b, #d97706);
     color: white;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     font-weight: bold;
-    padding: 10px 25px;
+    padding: 8px 20px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
@@ -388,7 +389,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    margin-bottom: 5px;
 }
 
 /* Efecto al pasar el mouse */
@@ -427,7 +427,7 @@ body {
 }
 
 .ficha-peon img {
-    height: 55px;
+    height: 50px;
     object-fit: contain;
     filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.4));
     transition: all 0.3s ease;
@@ -435,8 +435,8 @@ body {
 
 .nombre-peon {
     position: absolute;
-    bottom: 100%;         /* Lo empuja exactamente arriba del ícono */
-    margin-bottom: 10px;  /* Le da un poco de respiro de separación */
+    top: 100%;
+    margin-top: 0px;
     background-color: #1e293b;
     color: #fff;
     font-size: 0.7rem;
@@ -444,7 +444,7 @@ body {
     padding: 4px 8px;
     border-radius: 4px;
     opacity: 0;
-    transform: translateY(10px); /* Empieza un poco más abajo para el efecto de entrada */
+    transform: translateY(-10px);
     transition: all 0.3s ease;
     white-space: nowrap;
     pointer-events: none;
@@ -478,12 +478,13 @@ body {
 #mensaje-dados {
     background-color: #fffde7; 
     border: 2px solid #f39c12; 
-    border-radius: 8px;
-    padding: 6px 12px;
-    margin: 5px auto 15px auto;
-    max-width: 250px;
+    border-radius: 6px;
+    padding: 4px 10px;
+    margin: 0 auto;
+    max-width: 300px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    line-height: 1.2;
     color: #333;
     font-weight: 500;
     text-align: center;
@@ -492,7 +493,7 @@ body {
 #mensaje-dados b, 
 #mensaje-dados strong {
     color: #e74c3c; 
-    font-size: 0.95rem; 
+    font-size: 0.7rem; 
 }
 
 /* 7. Contacto / Declaración */
@@ -1044,6 +1045,43 @@ padding: 15px;
     padding-left: 20px;
 }
 
+.entrada-contenido p {
+    text-align: justify;
+    margin-bottom: 15px; /* Genera el espacio exacto entre los párrafos */
+    line-height: 1.6;    /* Mejora la legibilidad separando un poco los renglones */
+}
+
+/* Previene que el último párrafo sume un margen innecesario al final de la caja */
+.entrada-contenido p:last-child {
+    margin-bottom: 0; 
+}
+
+.detalle-paso p {
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 10px; /* Separación estándar */
+}
+
+.opcion-carta {
+    background-color: #f8f9fa; /* Mantené tu gris actual si es distinto */
+    padding: 15px 20px; /* ACÁ ESTÁ LA CLAVE: 15px arriba/abajo, 20px a los lados */
+    border-radius: 8px;
+    margin-top: 15px; /* Lo separa del texto que tiene arriba */
+    border: 1px solid #e2e8f0; /* Opcional: un bordecito sutil para definir la caja */
+}
+
+/* Previene que el texto dentro de la caja gris genere un hueco extra abajo */
+.opcion-carta p:last-child {
+    margin-bottom: 0;
+}
+
+.encabezado-opcion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px; /* Empuja el texto descriptivo un poco hacia abajo */
+}
+
 /* 12. Footer */
 
 .pie-pagina {
@@ -1249,6 +1287,7 @@ padding: 15px;
     .nav-links { 
         display: none; 
         flex-direction: column;
+        align-items: center;
         position: absolute;
         top: 100%; 
         left: 0;
@@ -1256,7 +1295,23 @@ padding: 15px;
         background-color: #0b1118;
         padding: 20px 0;
         box-shadow: 0 10px 15px rgba(0,0,0,0.5);
-        gap: 20px;
+        gap: 15px;
+        z-index: 100;
+    }
+.nav-links a {
+        width: auto; /* Evita que el enlace ocupe el 100% del ancho */
+        border-bottom: none; /* Elimina la línea roja gigante */
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 8px; /* Un bordecito suave */
+    }
+    .nav-links a:hover, .nav-links a:active {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-bottom: none; 
+    }
+
+    .menu-toggle:checked ~ .nav-links {
+        display: flex;
     }
     .menu-toggle:checked ~ .nav-links {
         display: flex;
@@ -1428,18 +1483,29 @@ body {
 }
 
 
+/* Acentos para la bitácora unificados con los colores del tablero */
 .acento-rojo { border-left: 6px solid #e74c3c; }
-.acento-naranja { border-left: 6px solid #f59e0b; }
-.acento-azul { border-left: 6px solid #00a2e8; }
-.acento-verde { border-left: 6px solid #27ae60; }
-.acento-rosa { border-left: 6px solid #e84393; }
+.acento-celeste { border-left: 6px solid #aae0fa; }
+.acento-morado { border-left: 6px solid #9b59b6; }
+.acento-verde { border-left: 6px solid #2ecc71; } /* Actualizado al verde del tablero */
+.acento-azul-oscuro { border-left: 6px solid #1e3799; }
+.acento-amarillo { border-left: 6px solid #f1c40f; }
 
-
+/* Colores para los botones de expandir */
 .acento-rojo .btn-expandir { color: #e74c3c; }
-.acento-naranja .btn-expandir { color: #f59e0b; }
-.acento-azul .btn-expandir { color: #00a2e8; }
-.acento-verde .btn-expandir { color: #27ae60; }
-.acento-rosa .btn-expandir { color: #e84393; }
+.acento-celeste .btn-expandir { color: #aae0fa; }
+.acento-morado .btn-expandir { color: #9b59b6; }
+.acento-verde .btn-expandir { color: #2ecc71; }
+.acento-azul-oscuro .btn-expandir { color: #1e3799; }
+.acento-amarillo .btn-expandir { color: #f1c40f; }
+
+/* Colores para los números de los pasos (con especificidad alta para que no fallen) */
+.numero-paso.numero-rojo { color: #e74c3c; }
+.numero-paso.numero-celeste { color: #aae0fa; }
+.numero-paso.numero-morado { color: #9b59b6; }
+.numero-paso.numero-verde { color: #2ecc71; }
+.numero-paso.numero-azul-oscuro { color: #1e3799; }
+.numero-paso.numero-amarillo { color: #f1c40f; }
 
 .entrada-bitacora.expandida .btn-expandir {
     transform: rotate(180deg);
